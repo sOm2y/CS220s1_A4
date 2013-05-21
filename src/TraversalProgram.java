@@ -81,12 +81,17 @@ public class TraversalProgram {
 		}
 		while (!cityStack.isEmpty() && cityStack != null) {
 			if (getNextWhiteCity() == -1) { // check if vertex is no white
-											// neighbour
-				cityStack.pop();
+											// Neighbor
+				System.out.println(cityStack.pop().getName());
+				steps++;
 			} else {
-				// cities[nextWhiteCity].getStepsToSortRoutes();
+				int routeTo = cities[nextWhiteCity].getRoute(nextWhiteCity).getDestination();
 				cityStack.push(cities[getNextWhiteCity()]);
 				whiteCities[nextWhiteCity] = -1;
+				
+				cities[nextWhiteCity].getStepsToSortRoutes();
+				System.out.println(cities[nextWhiteCity].getName());
+				steps++;
 			}
 			steps++;
 		}
