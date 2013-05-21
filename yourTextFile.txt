@@ -1,0 +1,802 @@
+Number of cities to initialize (25 to 51) [51]: 
+City: Auckland
+    Route to: Apia for $178.2
+    Route to: Adelaide for $297.0
+    Route to: Honolulu for $693.0
+    Route to: Los Angeles for $1138.5
+    Route to: Buenos Aires for $1200.0
+
+City: Adelaide
+    Route to: Auckland for $297.0
+
+City: Apia
+    Route to: Auckland for $178.2
+
+City: Athens
+    Route to: Frankfurt for $148.5
+    Route to: Berlin for $148.5
+    Route to: London for $247.5
+    Route to: Cairo for $247.5
+    Route to: Jerusalem for $247.5
+    Route to: Dubai for $280.0
+
+City: Beijing
+    Route to: Guangdong for $150.0
+    Route to: Hong Kong for $160.0
+    Route to: Chongqing for $200.0
+    Route to: Jakarta for $346.5
+    Route to: Kolkata for $400.0
+    Route to: Honolulu for $650.0
+    Route to: Dubai for $950.0
+    Route to: Berlin for $1000.0
+    Route to: Geneva for $1050.0
+    Route to: London for $1050.0
+    Route to: Los Angeles for $1250.0
+
+City: Berlin
+    Route to: Frankfurt for $100.0
+    Route to: Geneva for $120.0
+    Route to: Athens for $148.5
+    Route to: London for $150.0
+    Route to: Istanbul for $220.0
+    Route to: Jerusalem for $250.0
+    Route to: Beijing for $1000.0
+
+City: Buenos Aires
+    Route to: Los Angeles for $990.0
+    Route to: Johannesburg for $990.0
+    Route to: Honolulu for $1188.0
+    Route to: Auckland for $1200.0
+    Route to: Geneva for $1386.0
+    Route to: London for $1435.5
+    Route to: Frankfurt for $1485.0
+
+City: Cairo
+    Route to: Istanbul for $200.0
+    Route to: Athens for $247.5
+    Route to: Dubai for $250.0
+    Route to: Frankfurt for $250.0
+    Route to: London for $300.0
+    Route to: Geneva for $350.0
+    Route to: Jerusalem for $400.0
+    Route to: Johannesburg for $900.0
+    Route to: Hong Kong for $1350.0
+
+City: Cancun
+    Route to: Los Angeles for $350.0
+
+City: Chongqing
+    Route to: Guangdong for $150.0
+    Route to: Beijing for $200.0
+    Route to: Dubai for $1200.0
+
+City: Denpasar
+    Route to: Jakarta for $198.0
+    Route to: Dubai for $1200.0
+
+City: Dubai
+    Route to: Istanbul for $247.5
+    Route to: Cairo for $250.0
+    Route to: Athens for $280.0
+    Route to: Geneva for $792.0
+    Route to: Kolkata for $891.0
+    Route to: Frankfurt for $891.0
+    Route to: London for $940.5
+    Route to: Beijing for $950.0
+    Route to: Hong Kong for $990.0
+    Route to: Jakarta for $990.0
+    Route to: Johannesburg for $1188.0
+    Route to: Chongqing for $1200.0
+    Route to: Denpasar for $1200.0
+    Route to: Los Angeles for $1584.0
+
+City: El Paso
+    Route to: Los Angeles for $150.0
+
+City: Frankfurt
+    Route to: Berlin for $100.0
+    Route to: Athens for $148.5
+    Route to: London for $198.0
+    Route to: Geneva for $198.0
+    Route to: Istanbul for $200.0
+    Route to: Cairo for $250.0
+    Route to: Jerusalem for $297.0
+    Route to: Dubai for $891.0
+    Route to: Los Angeles for $891.0
+    Route to: Johannesburg for $940.5
+    Route to: Kolkata for $1089.0
+    Route to: Guangdong for $1200.0
+    Route to: Hong Kong for $1287.0
+    Route to: Jakarta for $1485.0
+    Route to: Buenos Aires for $1485.0
+
+City: Geneva
+    Route to: Berlin for $120.0
+    Route to: Frankfurt for $198.0
+    Route to: Cairo for $350.0
+    Route to: Jerusalem for $450.0
+    Route to: London for $450.0
+    Route to: Dubai for $792.0
+    Route to: Beijing for $1050.0
+    Route to: Hong Kong for $1200.0
+    Route to: Buenos Aires for $1386.0
+
+City: Guangdong
+    Route to: Hong Kong for $49.5
+    Route to: Chongqing for $150.0
+    Route to: Beijing for $150.0
+    Route to: Jakarta for $247.5
+    Route to: Kolkata for $247.5
+    Route to: London for $792.0
+    Route to: Frankfurt for $1200.0
+
+City: Hong Kong
+    Route to: Guangdong for $49.5
+    Route to: Beijing for $160.0
+    Route to: Jakarta for $198.0
+    Route to: Kolkata for $250.0
+    Route to: London for $750.0
+    Route to: Istanbul for $850.0
+    Route to: Dubai for $990.0
+    Route to: Honolulu for $1000.0
+    Route to: Geneva for $1200.0
+    Route to: Frankfurt for $1287.0
+    Route to: Cairo for $1350.0
+
+City: Honolulu
+    Route to: Los Angeles for $600.0
+    Route to: Beijing for $650.0
+    Route to: Auckland for $693.0
+    Route to: Hong Kong for $1000.0
+    Route to: Buenos Aires for $1188.0
+
+City: Istanbul
+    Route to: Frankfurt for $200.0
+    Route to: Cairo for $200.0
+    Route to: Berlin for $220.0
+    Route to: Dubai for $247.5
+    Route to: London for $445.5
+    Route to: Hong Kong for $850.0
+
+City: Jakarta
+    Route to: Hong Kong for $198.0
+    Route to: Denpasar for $198.0
+    Route to: Guangdong for $247.5
+    Route to: Kolkata for $250.0
+    Route to: Beijing for $346.5
+    Route to: Dubai for $990.0
+    Route to: London for $1080.0
+    Route to: Frankfurt for $1485.0
+
+City: Jerusalem
+    Route to: Athens for $247.5
+    Route to: Berlin for $250.0
+    Route to: Frankfurt for $297.0
+    Route to: Cairo for $400.0
+    Route to: Geneva for $450.0
+    Route to: London for $550.0
+    Route to: Johannesburg for $850.0
+
+City: Johannesburg
+    Route to: Jerusalem for $850.0
+    Route to: Cairo for $900.0
+    Route to: Frankfurt for $940.5
+    Route to: Buenos Aires for $990.0
+    Route to: London for $1100.0
+    Route to: Dubai for $1188.0
+
+City: Kolkata
+    Route to: Guangdong for $247.5
+    Route to: Hong Kong for $250.0
+    Route to: Jakarta for $250.0
+    Route to: Beijing for $400.0
+    Route to: Dubai for $891.0
+    Route to: London for $1000.0
+    Route to: Frankfurt for $1089.0
+
+City: London
+    Route to: Berlin for $150.0
+    Route to: Frankfurt for $198.0
+    Route to: Athens for $247.5
+    Route to: Cairo for $300.0
+    Route to: Istanbul for $445.5
+    Route to: Geneva for $450.0
+    Route to: Jerusalem for $550.0
+    Route to: Hong Kong for $750.0
+    Route to: Guangdong for $792.0
+    Route to: Dubai for $940.5
+    Route to: Kolkata for $1000.0
+    Route to: Beijing for $1050.0
+    Route to: Jakarta for $1080.0
+    Route to: Los Angeles for $1100.0
+    Route to: Johannesburg for $1100.0
+    Route to: Buenos Aires for $1435.5
+
+City: Los Angeles
+    Route to: El Paso for $150.0
+    Route to: Cancun for $350.0
+    Route to: Honolulu for $600.0
+    Route to: Frankfurt for $891.0
+    Route to: Buenos Aires for $990.0
+    Route to: London for $1100.0
+    Route to: Auckland for $1138.5
+    Route to: Beijing for $1250.0
+    Route to: Dubai for $1584.0
+
+25 cities and 174 routes loaded.
+
+
+1) Perform plain DFS
+2) Perform DFS with cheapest edge first
+3) Perform DFS with path optimisation
+4) Perform DFS with path optimisation and cheapest edge first
+5) Perform plain BFS
+6) Perform BFS with cheapest edge first
+7) Perform BFS with path optimisation
+8) Perform BFS with path optimisation and cheapest edge first
+9) Perform the Dijkstra algorithm
+0) Quit
+Your choice: 
+
+*** Plain DFS ***
+Performing a traced DFS search
+Initialising cities
+Cities initialised
+Pushing Auckland onto stack (Auckland is now grey)
+Setting cost to Auckland to 0
+Is stack empty? No, so look at grey city on top of stack: Auckland
+Checking route to Adelaide
+Incrementing steps from 0 to 1
+Adelaide is still white
+Pushing Adelaide onto stack (Adelaide is now grey)
+Updating: Setting cost to Adelaide to $297.0
+Is stack empty? No, so look at grey city on top of stack: Adelaide
+Checking route to Auckland
+Incrementing steps from 1 to 2
+Popping Adelaide off the stack
+Is stack empty? No, so look at grey city on top of stack: Auckland
+Checking route to Apia
+Incrementing steps from 2 to 3
+Apia is still white
+Pushing Apia onto stack (Apia is now grey)
+Updating: Setting cost to Apia to $178.2
+Is stack empty? No, so look at grey city on top of stack: Apia
+Checking route to Auckland
+Incrementing steps from 3 to 4
+Popping Apia off the stack
+Is stack empty? No, so look at grey city on top of stack: Auckland
+Checking route to Buenos Aires
+Incrementing steps from 4 to 5
+Buenos Aires is still white
+Pushing Buenos Aires onto stack (Buenos Aires is now grey)
+Updating: Setting cost to Buenos Aires to $1200.0
+Is stack empty? No, so look at grey city on top of stack: Buenos Aires
+Checking route to Auckland
+Incrementing steps from 5 to 6
+Checking route to Frankfurt
+Incrementing steps from 6 to 7
+Frankfurt is still white
+Pushing Frankfurt onto stack (Frankfurt is now grey)
+Updating: Setting cost to Frankfurt to $2685.0
+Is stack empty? No, so look at grey city on top of stack: Frankfurt
+Checking route to Athens
+Incrementing steps from 7 to 8
+Athens is still white
+Pushing Athens onto stack (Athens is now grey)
+Updating: Setting cost to Athens to $2833.5
+Is stack empty? No, so look at grey city on top of stack: Athens
+Checking route to Berlin
+Incrementing steps from 8 to 9
+Berlin is still white
+Pushing Berlin onto stack (Berlin is now grey)
+Updating: Setting cost to Berlin to $2982.0
+Is stack empty? No, so look at grey city on top of stack: Berlin
+Checking route to Athens
+Incrementing steps from 9 to 10
+Checking route to Beijing
+Incrementing steps from 10 to 11
+Beijing is still white
+Pushing Beijing onto stack (Beijing is now grey)
+Updating: Setting cost to Beijing to $3982.0
+Is stack empty? No, so look at grey city on top of stack: Beijing
+Checking route to Berlin
+Incrementing steps from 11 to 12
+Checking route to Chongqing
+Incrementing steps from 12 to 13
+Chongqing is still white
+Pushing Chongqing onto stack (Chongqing is now grey)
+Updating: Setting cost to Chongqing to $4182.0
+Is stack empty? No, so look at grey city on top of stack: Chongqing
+Checking route to Beijing
+Incrementing steps from 13 to 14
+Checking route to Dubai
+Incrementing steps from 14 to 15
+Dubai is still white
+Pushing Dubai onto stack (Dubai is now grey)
+Updating: Setting cost to Dubai to $5382.0
+Is stack empty? No, so look at grey city on top of stack: Dubai
+Checking route to Athens
+Incrementing steps from 15 to 16
+Checking route to Beijing
+Incrementing steps from 16 to 17
+Checking route to Cairo
+Incrementing steps from 17 to 18
+Cairo is still white
+Pushing Cairo onto stack (Cairo is now grey)
+Updating: Setting cost to Cairo to $5632.0
+Is stack empty? No, so look at grey city on top of stack: Cairo
+Checking route to Athens
+Incrementing steps from 18 to 19
+Checking route to Dubai
+Incrementing steps from 19 to 20
+Checking route to Frankfurt
+Incrementing steps from 20 to 21
+Checking route to Geneva
+Incrementing steps from 21 to 22
+Geneva is still white
+Pushing Geneva onto stack (Geneva is now grey)
+Updating: Setting cost to Geneva to $5982.0
+Is stack empty? No, so look at grey city on top of stack: Geneva
+Checking route to Beijing
+Incrementing steps from 22 to 23
+Checking route to Berlin
+Incrementing steps from 23 to 24
+Checking route to Buenos Aires
+Incrementing steps from 24 to 25
+Checking route to Cairo
+Incrementing steps from 25 to 26
+Checking route to Dubai
+Incrementing steps from 26 to 27
+Checking route to Frankfurt
+Incrementing steps from 27 to 28
+Checking route to Hong Kong
+Incrementing steps from 28 to 29
+Hong Kong is still white
+Pushing Hong Kong onto stack (Hong Kong is now grey)
+Updating: Setting cost to Hong Kong to $7182.0
+Is stack empty? No, so look at grey city on top of stack: Hong Kong
+Checking route to Beijing
+Incrementing steps from 29 to 30
+Checking route to Cairo
+Incrementing steps from 30 to 31
+Checking route to Dubai
+Incrementing steps from 31 to 32
+Checking route to Frankfurt
+Incrementing steps from 32 to 33
+Checking route to Geneva
+Incrementing steps from 33 to 34
+Checking route to Guangdong
+Incrementing steps from 34 to 35
+Guangdong is still white
+Pushing Guangdong onto stack (Guangdong is now grey)
+Updating: Setting cost to Guangdong to $7231.5
+Is stack empty? No, so look at grey city on top of stack: Guangdong
+Checking route to Beijing
+Incrementing steps from 35 to 36
+Checking route to Chongqing
+Incrementing steps from 36 to 37
+Checking route to Frankfurt
+Incrementing steps from 37 to 38
+Checking route to Hong Kong
+Incrementing steps from 38 to 39
+Checking route to Jakarta
+Incrementing steps from 39 to 40
+Jakarta is still white
+Pushing Jakarta onto stack (Jakarta is now grey)
+Updating: Setting cost to Jakarta to $7479.0
+Is stack empty? No, so look at grey city on top of stack: Jakarta
+Checking route to Beijing
+Incrementing steps from 40 to 41
+Checking route to Denpasar
+Incrementing steps from 41 to 42
+Denpasar is still white
+Pushing Denpasar onto stack (Denpasar is now grey)
+Updating: Setting cost to Denpasar to $7677.0
+Is stack empty? No, so look at grey city on top of stack: Denpasar
+Checking route to Dubai
+Incrementing steps from 42 to 43
+Checking route to Jakarta
+Incrementing steps from 43 to 44
+Popping Denpasar off the stack
+Is stack empty? No, so look at grey city on top of stack: Jakarta
+Checking route to Dubai
+Incrementing steps from 44 to 45
+Checking route to Frankfurt
+Incrementing steps from 45 to 46
+Checking route to Guangdong
+Incrementing steps from 46 to 47
+Checking route to Hong Kong
+Incrementing steps from 47 to 48
+Checking route to Kolkata
+Incrementing steps from 48 to 49
+Kolkata is still white
+Pushing Kolkata onto stack (Kolkata is now grey)
+Updating: Setting cost to Kolkata to $7729.0
+Is stack empty? No, so look at grey city on top of stack: Kolkata
+Checking route to Beijing
+Incrementing steps from 49 to 50
+Checking route to Dubai
+Incrementing steps from 50 to 51
+Checking route to Frankfurt
+Incrementing steps from 51 to 52
+Checking route to Guangdong
+Incrementing steps from 52 to 53
+Checking route to Hong Kong
+Incrementing steps from 53 to 54
+Checking route to Jakarta
+Incrementing steps from 54 to 55
+Checking route to London
+Incrementing steps from 55 to 56
+London is still white
+Pushing London onto stack (London is now grey)
+Updating: Setting cost to London to $8729.0
+Is stack empty? No, so look at grey city on top of stack: London
+Checking route to Athens
+Incrementing steps from 56 to 57
+Checking route to Beijing
+Incrementing steps from 57 to 58
+Checking route to Berlin
+Incrementing steps from 58 to 59
+Checking route to Buenos Aires
+Incrementing steps from 59 to 60
+Checking route to Cairo
+Incrementing steps from 60 to 61
+Checking route to Dubai
+Incrementing steps from 61 to 62
+Checking route to Frankfurt
+Incrementing steps from 62 to 63
+Checking route to Geneva
+Incrementing steps from 63 to 64
+Checking route to Guangdong
+Incrementing steps from 64 to 65
+Checking route to Hong Kong
+Incrementing steps from 65 to 66
+Checking route to Istanbul
+Incrementing steps from 66 to 67
+Istanbul is still white
+Pushing Istanbul onto stack (Istanbul is now grey)
+Updating: Setting cost to Istanbul to $9174.5
+Is stack empty? No, so look at grey city on top of stack: Istanbul
+Checking route to Berlin
+Incrementing steps from 67 to 68
+Checking route to Cairo
+Incrementing steps from 68 to 69
+Checking route to Dubai
+Incrementing steps from 69 to 70
+Checking route to Frankfurt
+Incrementing steps from 70 to 71
+Checking route to Hong Kong
+Incrementing steps from 71 to 72
+Checking route to London
+Incrementing steps from 72 to 73
+Popping Istanbul off the stack
+Is stack empty? No, so look at grey city on top of stack: London
+Checking route to Jakarta
+Incrementing steps from 73 to 74
+Checking route to Jerusalem
+Incrementing steps from 74 to 75
+Jerusalem is still white
+Pushing Jerusalem onto stack (Jerusalem is now grey)
+Updating: Setting cost to Jerusalem to $9279.0
+Is stack empty? No, so look at grey city on top of stack: Jerusalem
+Checking route to Athens
+Incrementing steps from 75 to 76
+Checking route to Berlin
+Incrementing steps from 76 to 77
+Checking route to Cairo
+Incrementing steps from 77 to 78
+Checking route to Frankfurt
+Incrementing steps from 78 to 79
+Checking route to Geneva
+Incrementing steps from 79 to 80
+Checking route to Johannesburg
+Incrementing steps from 80 to 81
+Johannesburg is still white
+Pushing Johannesburg onto stack (Johannesburg is now grey)
+Updating: Setting cost to Johannesburg to $10129.0
+Is stack empty? No, so look at grey city on top of stack: Johannesburg
+Checking route to Buenos Aires
+Incrementing steps from 81 to 82
+Checking route to Cairo
+Incrementing steps from 82 to 83
+Checking route to Dubai
+Incrementing steps from 83 to 84
+Checking route to Frankfurt
+Incrementing steps from 84 to 85
+Checking route to Jerusalem
+Incrementing steps from 85 to 86
+Checking route to London
+Incrementing steps from 86 to 87
+Popping Johannesburg off the stack
+Is stack empty? No, so look at grey city on top of stack: Jerusalem
+Checking route to London
+Incrementing steps from 87 to 88
+Popping Jerusalem off the stack
+Is stack empty? No, so look at grey city on top of stack: London
+Checking route to Johannesburg
+Incrementing steps from 88 to 89
+Checking route to Kolkata
+Incrementing steps from 89 to 90
+Checking route to Los Angeles
+Incrementing steps from 90 to 91
+Los Angeles is still white
+Pushing Los Angeles onto stack (Los Angeles is now grey)
+Updating: Setting cost to Los Angeles to $9829.0
+Is stack empty? No, so look at grey city on top of stack: Los Angeles
+Checking route to Auckland
+Incrementing steps from 91 to 92
+Checking route to Beijing
+Incrementing steps from 92 to 93
+Checking route to Buenos Aires
+Incrementing steps from 93 to 94
+Checking route to Cancun
+Incrementing steps from 94 to 95
+Cancun is still white
+Pushing Cancun onto stack (Cancun is now grey)
+Updating: Setting cost to Cancun to $10179.0
+Is stack empty? No, so look at grey city on top of stack: Cancun
+Checking route to Los Angeles
+Incrementing steps from 95 to 96
+Popping Cancun off the stack
+Is stack empty? No, so look at grey city on top of stack: Los Angeles
+Checking route to Dubai
+Incrementing steps from 96 to 97
+Checking route to El Paso
+Incrementing steps from 97 to 98
+El Paso is still white
+Pushing El Paso onto stack (El Paso is now grey)
+Updating: Setting cost to El Paso to $9979.0
+Is stack empty? No, so look at grey city on top of stack: El Paso
+Checking route to Los Angeles
+Incrementing steps from 98 to 99
+Popping El Paso off the stack
+Is stack empty? No, so look at grey city on top of stack: Los Angeles
+Checking route to Frankfurt
+Incrementing steps from 99 to 100
+Checking route to Honolulu
+Incrementing steps from 100 to 101
+Honolulu is still white
+Pushing Honolulu onto stack (Honolulu is now grey)
+Updating: Setting cost to Honolulu to $10429.0
+Is stack empty? No, so look at grey city on top of stack: Honolulu
+Checking route to Auckland
+Incrementing steps from 101 to 102
+Checking route to Beijing
+Incrementing steps from 102 to 103
+Checking route to Buenos Aires
+Incrementing steps from 103 to 104
+Checking route to Hong Kong
+Incrementing steps from 104 to 105
+Checking route to Los Angeles
+Incrementing steps from 105 to 106
+Popping Honolulu off the stack
+Is stack empty? No, so look at grey city on top of stack: Los Angeles
+Checking route to London
+Incrementing steps from 106 to 107
+Popping Los Angeles off the stack
+Is stack empty? No, so look at grey city on top of stack: London
+Popping London off the stack
+Is stack empty? No, so look at grey city on top of stack: Kolkata
+Popping Kolkata off the stack
+Is stack empty? No, so look at grey city on top of stack: Jakarta
+Checking route to London
+Incrementing steps from 107 to 108
+Popping Jakarta off the stack
+Is stack empty? No, so look at grey city on top of stack: Guangdong
+Checking route to Kolkata
+Incrementing steps from 108 to 109
+Checking route to London
+Incrementing steps from 109 to 110
+Popping Guangdong off the stack
+Is stack empty? No, so look at grey city on top of stack: Hong Kong
+Checking route to Honolulu
+Incrementing steps from 110 to 111
+Checking route to Istanbul
+Incrementing steps from 111 to 112
+Checking route to Jakarta
+Incrementing steps from 112 to 113
+Checking route to Kolkata
+Incrementing steps from 113 to 114
+Checking route to London
+Incrementing steps from 114 to 115
+Popping Hong Kong off the stack
+Is stack empty? No, so look at grey city on top of stack: Geneva
+Checking route to Jerusalem
+Incrementing steps from 115 to 116
+Checking route to London
+Incrementing steps from 116 to 117
+Popping Geneva off the stack
+Is stack empty? No, so look at grey city on top of stack: Cairo
+Checking route to Hong Kong
+Incrementing steps from 117 to 118
+Checking route to Istanbul
+Incrementing steps from 118 to 119
+Checking route to Jerusalem
+Incrementing steps from 119 to 120
+Checking route to Johannesburg
+Incrementing steps from 120 to 121
+Checking route to London
+Incrementing steps from 121 to 122
+Popping Cairo off the stack
+Is stack empty? No, so look at grey city on top of stack: Dubai
+Checking route to Chongqing
+Incrementing steps from 122 to 123
+Checking route to Denpasar
+Incrementing steps from 123 to 124
+Checking route to Frankfurt
+Incrementing steps from 124 to 125
+Checking route to Geneva
+Incrementing steps from 125 to 126
+Checking route to Hong Kong
+Incrementing steps from 126 to 127
+Checking route to Istanbul
+Incrementing steps from 127 to 128
+Checking route to Jakarta
+Incrementing steps from 128 to 129
+Checking route to Johannesburg
+Incrementing steps from 129 to 130
+Checking route to Kolkata
+Incrementing steps from 130 to 131
+Checking route to London
+Incrementing steps from 131 to 132
+Checking route to Los Angeles
+Incrementing steps from 132 to 133
+Popping Dubai off the stack
+Is stack empty? No, so look at grey city on top of stack: Chongqing
+Checking route to Guangdong
+Incrementing steps from 133 to 134
+Popping Chongqing off the stack
+Is stack empty? No, so look at grey city on top of stack: Beijing
+Checking route to Dubai
+Incrementing steps from 134 to 135
+Checking route to Geneva
+Incrementing steps from 135 to 136
+Checking route to Guangdong
+Incrementing steps from 136 to 137
+Checking route to Hong Kong
+Incrementing steps from 137 to 138
+Checking route to Honolulu
+Incrementing steps from 138 to 139
+Checking route to Jakarta
+Incrementing steps from 139 to 140
+Checking route to Kolkata
+Incrementing steps from 140 to 141
+Checking route to London
+Incrementing steps from 141 to 142
+Checking route to Los Angeles
+Incrementing steps from 142 to 143
+Popping Beijing off the stack
+Is stack empty? No, so look at grey city on top of stack: Berlin
+Checking route to Frankfurt
+Incrementing steps from 143 to 144
+Checking route to Geneva
+Incrementing steps from 144 to 145
+Checking route to Istanbul
+Incrementing steps from 145 to 146
+Checking route to Jerusalem
+Incrementing steps from 146 to 147
+Checking route to London
+Incrementing steps from 147 to 148
+Popping Berlin off the stack
+Is stack empty? No, so look at grey city on top of stack: Athens
+Checking route to Cairo
+Incrementing steps from 148 to 149
+Checking route to Dubai
+Incrementing steps from 149 to 150
+Checking route to Frankfurt
+Incrementing steps from 150 to 151
+Checking route to Jerusalem
+Incrementing steps from 151 to 152
+Checking route to London
+Incrementing steps from 152 to 153
+Popping Athens off the stack
+Is stack empty? No, so look at grey city on top of stack: Frankfurt
+Checking route to Berlin
+Incrementing steps from 153 to 154
+Checking route to Buenos Aires
+Incrementing steps from 154 to 155
+Checking route to Cairo
+Incrementing steps from 155 to 156
+Checking route to Dubai
+Incrementing steps from 156 to 157
+Checking route to Geneva
+Incrementing steps from 157 to 158
+Checking route to Guangdong
+Incrementing steps from 158 to 159
+Checking route to Hong Kong
+Incrementing steps from 159 to 160
+Checking route to Istanbul
+Incrementing steps from 160 to 161
+Checking route to Jakarta
+Incrementing steps from 161 to 162
+Checking route to Jerusalem
+Incrementing steps from 162 to 163
+Checking route to Johannesburg
+Incrementing steps from 163 to 164
+Checking route to Kolkata
+Incrementing steps from 164 to 165
+Checking route to London
+Incrementing steps from 165 to 166
+Checking route to Los Angeles
+Incrementing steps from 166 to 167
+Popping Frankfurt off the stack
+Is stack empty? No, so look at grey city on top of stack: Buenos Aires
+Checking route to Geneva
+Incrementing steps from 167 to 168
+Checking route to Honolulu
+Incrementing steps from 168 to 169
+Checking route to Johannesburg
+Incrementing steps from 169 to 170
+Checking route to London
+Incrementing steps from 170 to 171
+Checking route to Los Angeles
+Incrementing steps from 171 to 172
+Popping Buenos Aires off the stack
+Is stack empty? No, so look at grey city on top of stack: Auckland
+Checking route to Honolulu
+Incrementing steps from 172 to 173
+Checking route to Los Angeles
+Incrementing steps from 173 to 174
+Popping Auckland off the stack
+Is stack empty? Yes. Do we have any more white cities?
+No white cities left. End of trace.
+City: Auckland
+    Route to: Apia for $178.2
+    Route to: Adelaide for $297.0
+    Route to: Honolulu for $693.0
+    Route to: Los Angeles for $1138.5
+    Route to: Buenos Aires for $1200.0
+
+City: Adelaide ($297.0), Auckland to Adelaide ($297.0)
+
+City: Apia ($178.2), Auckland to Apia ($178.2)
+
+City: Athens ($2833.5), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5)
+
+City: Beijing ($3982.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0)
+
+City: Berlin ($2982.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5)
+
+City: Buenos Aires ($1200.0), Auckland to Buenos Aires ($1200.0)
+
+City: Cairo ($5632.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0)
+
+City: Cancun ($10179.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5), Jakarta to Kolkata ($250.0), Kolkata to London ($1000.0), London to Los Angeles ($1100.0), Los Angeles to Cancun ($350.0)
+
+City: Chongqing ($4182.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0)
+
+City: Denpasar ($7677.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5), Jakarta to Denpasar ($198.0)
+
+City: Dubai ($5382.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0)
+
+City: El Paso ($9979.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5), Jakarta to Kolkata ($250.0), Kolkata to London ($1000.0), London to Los Angeles ($1100.0), Los Angeles to El Paso ($150.0)
+
+City: Frankfurt ($2685.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0)
+
+City: Geneva ($5982.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0)
+
+City: Guangdong ($7231.5), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5)
+
+City: Hong Kong ($7182.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0)
+
+City: Honolulu ($10429.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5), Jakarta to Kolkata ($250.0), Kolkata to London ($1000.0), London to Los Angeles ($1100.0), Los Angeles to Honolulu ($600.0)
+
+City: Istanbul ($9174.5), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5), Jakarta to Kolkata ($250.0), Kolkata to London ($1000.0), London to Istanbul ($445.5)
+
+City: Jakarta ($7479.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5)
+
+City: Jerusalem ($9279.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5), Jakarta to Kolkata ($250.0), Kolkata to London ($1000.0), London to Jerusalem ($550.0)
+
+City: Johannesburg ($10129.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5), Jakarta to Kolkata ($250.0), Kolkata to London ($1000.0), London to Jerusalem ($550.0), Jerusalem to Johannesburg ($850.0)
+
+City: Kolkata ($7729.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5), Jakarta to Kolkata ($250.0)
+
+City: London ($8729.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5), Jakarta to Kolkata ($250.0), Kolkata to London ($1000.0)
+
+City: Los Angeles ($9829.0), Auckland to Buenos Aires ($1200.0), Buenos Aires to Frankfurt ($1485.0), Frankfurt to Athens ($148.5), Athens to Berlin ($148.5), Berlin to Beijing ($1000.0), Beijing to Chongqing ($200.0), Chongqing to Dubai ($1200.0), Dubai to Cairo ($250.0), Cairo to Geneva ($350.0), Geneva to Hong Kong ($1200.0), Hong Kong to Guangdong ($49.5), Guangdong to Jakarta ($247.5), Jakarta to Kolkata ($250.0), Kolkata to London ($1000.0), London to Los Angeles ($1100.0)
+
+25 cities and 174 routes loaded.
+
+Sorting steps taken (if any): 0
+Total steps taken: 174
+Number of cities to initialize (25 to 51) [51]: 
