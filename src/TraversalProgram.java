@@ -69,33 +69,82 @@ public class TraversalProgram {
 
 	// PUT YOUR OWN METHODS HERE
 
-	public void pureDFS() {
-		// try {
+	public void pureDFS()  {
+		 try {
 		initWhiteCities();
 		cityStack = new CityStack();
-
-		if (cityStack.isEmpty()) {
-			cityStack.push(cities[nextWhiteCity]); // push auckland to stack
-			whiteCities[nextWhiteCity] = -1;
-			steps++;
-		}
-		while (!cityStack.isEmpty() && cityStack != null) {
-			if (getNextWhiteCity() == -1) { // check if vertex is no white
-											// Neighbor
-				System.out.println(cityStack.pop().getName());
-				steps++;
-			} else {
-				int routeTo = cities[nextWhiteCity].getRoute(nextWhiteCity).getDestination();
-				cityStack.push(cities[getNextWhiteCity()]);
-				whiteCities[nextWhiteCity] = -1;
-				
-				cities[nextWhiteCity].getStepsToSortRoutes();
-				System.out.println(cities[nextWhiteCity].getName());
-				steps++;
+		for (int i = 0; i < cities.length; i++) {
+			System.out.println("city" + i + ": " + cities[i].getName());
+			for (int j = 0; j < cities[i].getRoutes().length; j++) {
+				System.out.println("route"
+						+ j
+						+ ": "
+						+ cities[cities[i].getRoutes()[j].getDestination()]
+								.getName());
 			}
-			steps++;
+			System.out.println(cities[i].getRoutes().length);
+			System.out
+					.println("--------------------------------------------------");
 		}
-		// } catch (NullPointerException e) {
+
+		if (cityStack.isEmpty()) { // first time let auckland to
+			cityStack.push(cities[0]); // push auckland to stack
+			whiteCities[0] = -1; // set auckland to grey
+			cities[nextWhiteCity].setCostTo(0); // set cost
+		}
+
+		while (!cityStack.isEmpty()) {
+//			if (cityStack.getStackTop().getLastRouteChecked() == -1) {
+//				cityStack.getStackTop().setLastRouteChecked(0);
+//			}1
+			
+			cityStack.getStackTop().setLastRouteChecked(cityStack.getStackTop().getLastRouteChecked()+1);
+//			
+			int routeLength = cityStack.getStackTop().getRoutes().length;
+			
+			int destCity = cityStack.getStackTop().getRoutes()[cityStack.getStackTop().getLastRouteChecked()].getDestination();
+			steps++;
+			if (whiteCities[destCity] != -1) { //white
+
+				whiteCities[destCity] = -1;
+				cityStack.push(cities[destCity]);
+			} else { // grey
+				if (cityStack.getStackTop().getLastRouteChecked() >= routeLength-1)
+					cityStack.pop();
+				
+			}
+
+		}
+		 }catch (ArrayIndexOutOfBoundsException e){}
+
+		// for (int i = 0; i < cities[citiesIndex].getRoutes().length; i++) {
+		// //get auckland routes
+		//
+		// int cityIndex = cities[citiesIndex].getRoutes()[i] //get destination
+		// .getDestination();
+		// double cityCost = cities[citiesIndex].getRoutes()[i].getCost(); //get
+		// cost to this destination
+		// while(!cityStack.isEmpty()) { //check stack whether empty
+		// if (whiteCities[cityIndex] != -1) { //check destination has been
+		// before
+		// cityStack.push(cities[cityIndex]); //push if it is white
+		// whiteCities[cityIndex] = -1; //let be grey
+		// cities[cityIndex].setCostTo(cityCost); //set cost to this city
+		// steps++; //step by 1
+		//
+		// if (cities[cityIndex].getRoutes().length == 0) { //if this city has
+		// no route
+		// cityStack.pop(); //pop out
+		// steps++;
+		// } else {
+		//
+		// pureDFS(cities[cityIndex].getRoutes()[0].getDestination());
+		// }
+		// }
+		// } else {
+		// break;
+		// }
+		//
 		// }
 	}
 
@@ -172,6 +221,7 @@ public class TraversalProgram {
 			switch (choice) {
 			case 1:
 				System.out.println("*** Plain DFS ***");
+
 				pureDFS();
 				// PUT YOUR METHOD CALL HERE
 				break;
