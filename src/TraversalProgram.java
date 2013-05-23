@@ -69,28 +69,36 @@ public class TraversalProgram {
 
 	// PUT YOUR OWN METHODS HERE
 
-	public void pureDFS() {
+	public void task1() {
 
-		initWhiteCities();									//initialise city
+		initWhiteCities(); // initialise city
 		cityStack = new CityStack();
-		
 
-		if (cityStack.isEmpty()) {					 	// initialise stack
-			cityStack.push(cities[0]); 					// push auckland to stack
-			whiteCities[0] = -1; 						// set auckland to grey
-			cities[nextWhiteCity].setCostTo(0); 		// set cost
+		if (cityStack.isEmpty()) { // initialise stack
+			cityStack.push(cities[0]); // push auckland to stack
+			whiteCities[0] = -1; // set auckland to grey
+			cities[nextWhiteCity].setCostTo(0); // set cost
 		}
 
 		while (!cityStack.isEmpty()) {
 			System.out
 					.println("Is stack empty? No, so look at grey city on top of stack:"
 							+ cityStack.getStackTop().getName());
-			
-			int routeLength = cityStack.getStackTop().getRoutes().length;
-			
-			if (cityStack.getStackTop().getLastRouteChecked() < routeLength - 1) {			// if it is not last route of this stack
 
-				cityStack.getStackTop().setLastRouteChecked(								// set next route of stack 
+			int routeLength = cityStack.getStackTop().getRoutes().length;
+
+			if (cityStack.getStackTop().getLastRouteChecked() < routeLength - 1) { // if
+																					// it
+																					// is
+																					// not
+																					// last
+																					// route
+																					// of
+																					// this
+																					// stack
+
+				cityStack.getStackTop().setLastRouteChecked( // set next route
+																// of stack
 						cityStack.getStackTop().getLastRouteChecked() + 1);
 				System.out.println("Checking route to "
 						+ cities[cityStack.getStackTop().getRoutes()[cityStack
@@ -98,29 +106,195 @@ public class TraversalProgram {
 								.getDestination()].getName());
 				System.out.println("Incrementing steps from" + (steps) + "to"
 						+ (steps + 1));
-				steps++;																	// step +1
+				steps++; // step +1
 			}
-			int destCity = cityStack.getStackTop().getRoutes()[cityStack					// get destination of this route
+			int destCity = cityStack.getStackTop().getRoutes()[cityStack // get
+																			// destination
+																			// of
+																			// this
+																			// route
 					.getStackTop().getLastRouteChecked()].getDestination();
-
-			if (whiteCities[destCity] != -1) { 												// if destination is white
+			if (whiteCities[destCity] != -1) { // if destination is white
 				System.out.println(cities[destCity].getName()
 						+ " is still white");
-				whiteCities[destCity] = -1;													// let it to grey
+				whiteCities[destCity] = -1; // let it to grey
 				System.out.println(cities[destCity].getName() + " to grey");
-				
-				cityStack.push(cities[destCity]);											// push to stack
+
+				cityStack.push(cities[destCity]); // push to stack
 				System.out.println(cities[destCity].getName() + " pushing");
-			} else if (cityStack.getStackTop().getLastRouteChecked() >= routeLength - 1) { 	// if destination is grey and it's
-																							// the last routes of this stack
+			} else if (cityStack.getStackTop().getLastRouteChecked() >= routeLength - 1) { // if
+																							// destination
+																							// is
+																							// grey
+																							// and
+																							// it's
+																							// the
+																							// last
+																							// routes
+																							// of
+																							// this
+																							// stack
 				System.out.println(cityStack.getStackTop().getName()
 						+ " poping out");
-				cityStack.pop();															// pop out this stack
+				cityStack.pop(); // pop out this stack
 
 			}
 
 		}
 
+	}
+
+	public void task2() {
+
+		sortSteps = initWhiteCities(); // initialise city
+		steps = sortSteps;
+		System.out.println("steps incurred in sorting cities" + steps);
+		cityStack = new CityStack();
+
+		if (cityStack.isEmpty()) { // initialise stack
+			cityStack.push(cities[0]); // push auckland to stack
+			whiteCities[0] = -1; // set auckland to grey
+			cities[nextWhiteCity].setCostTo(0); // set cost
+		}
+
+		while (!cityStack.isEmpty()) {
+			System.out
+					.println("Is stack empty? No, so look at grey city on top of stack:"
+							+ cityStack.getStackTop().getName());
+
+			int routeLength = cityStack.getStackTop().getSortedRoutes().length;
+
+			if (cityStack.getStackTop().getLastRouteChecked() < routeLength - 1) { // if
+																					// it
+																					// is
+																					// not
+																					// last
+																					// route
+																					// of
+																					// this
+																					// stack
+
+				cityStack.getStackTop().setLastRouteChecked( // set next route
+																// of stack
+						cityStack.getStackTop().getLastRouteChecked() + 1);
+				System.out
+						.println("Checking route to "
+								+ cities[cityStack.getStackTop()
+										.getSortedRoutes()[cityStack
+										.getStackTop().getLastRouteChecked()]
+										.getDestination()].getName());
+				System.out.println("Incrementing steps from" + (steps) + "to"
+						+ (steps + 1));
+				steps++; // step +1
+			}
+			int destCity = cityStack.getStackTop().getSortedRoutes()[cityStack // get
+																				// destination
+																				// of
+																				// this
+																				// route
+					.getStackTop().getLastRouteChecked()].getDestination();
+			if (whiteCities[destCity] != -1) { // if destination is white
+				System.out.println(cities[destCity].getName()
+						+ " is still white");
+				whiteCities[destCity] = -1; // let it to grey
+				System.out.println(cities[destCity].getName() + " to grey");
+
+				cityStack.push(cities[destCity]); // push to stack
+				System.out.println(cities[destCity].getName() + " pushing");
+			} else if (cityStack.getStackTop().getLastRouteChecked() >= routeLength - 1) { // if
+																							// destination
+																							// is
+																							// grey
+																							// and
+																							// it's
+																							// the
+																							// last
+																							// routes
+																							// of
+																							// this
+																							// stack
+				System.out.println(cityStack.getStackTop().getName()
+						+ " poping out");
+				cityStack.pop(); // pop out this stack
+
+			}
+
+		}
+
+	}
+
+	public void task3() {
+
+		initWhiteCities(); // initialise city
+		cityStack = new CityStack();
+
+		if (cityStack.isEmpty()) { // initialise stack
+			cityStack.push(cities[0]); // push auckland to stack
+			whiteCities[0] = -1; // set auckland to grey
+			cities[nextWhiteCity].setCostTo(0); // set cost
+		}
+
+		while (!cityStack.isEmpty()) {
+			System.out
+					.println("Is stack empty? No, so look at grey city on top of stack:"
+							+ cityStack.getStackTop().getName());
+
+			int routeLength = cityStack.getStackTop().getRoutes().length;
+
+			if (cityStack.getStackTop().getLastRouteChecked() < routeLength - 1) {
+
+				cityStack.getStackTop().setLastRouteChecked( // set next route
+																// of stack
+						cityStack.getStackTop().getLastRouteChecked() + 1);
+				System.out.println("Checking route to "
+						+ cities[cityStack.getStackTop().getRoutes()[cityStack
+								.getStackTop().getLastRouteChecked()]
+								.getDestination()].getName());
+				System.out.println("Incrementing steps from" + (steps) + "to"
+						+ (steps + 1));
+				steps++; // step +1
+			}
+			int destCity = cityStack.getStackTop().getRoutes()[cityStack // get
+
+					.getStackTop().getLastRouteChecked()].getDestination();
+			double destCost = cityStack.getStackTop().getRoutes()[cityStack
+					.getStackTop().getLastRouteChecked()].getCost();
+			double lastDestCost = cityStack.getStackTop().getCostTo();
+			double totalCost = destCost + lastDestCost;
+			double destCostTo =cities[destCity].getCostTo();
+			System.out.println(totalCost);
+			System.out.println(destCostTo);
+			if(totalCost<destCostTo)
+				System.out.print(totalCost+"<"+destCostTo);
+			if (whiteCities[destCity] != -1) { // if destination is white
+				System.out.println(cities[destCity].getName()
+						+ " is still white");
+				whiteCities[destCity] = -1; // let it to grey
+				System.out.println(cities[destCity].getName() + " to grey");
+
+				cityStack.push(cities[destCity]); // push to stack
+				System.out.println(cities[destCity].getName() + " pushing");
+				cityStack.getStackTop().setCostTo(totalCost);
+
+				System.out.println("Updating: Setting cost to "
+						+ cityStack.getStackTop().getName() + totalCost);
+
+			} else {
+				if (totalCost < destCostTo) {
+
+					cityStack.push(cities[destCity]);
+					whiteCities[destCity] = -1;
+					cityStack.getStackTop().setCostTo(destCost + lastDestCost);
+				}
+				if (cityStack.getStackTop().getLastRouteChecked() >= routeLength - 1) {
+					// the last routes of this stack
+					System.out.println(cityStack.getStackTop().getName()
+							+ " poping out");
+					cityStack.pop(); // pop out this stack
+
+				}
+			}
+		}
 	}
 
 	// This is a diagnostic method used by start()
@@ -197,16 +371,17 @@ public class TraversalProgram {
 			case 1:
 				System.out.println("*** Plain DFS ***");
 
-				pureDFS();
-				// PUT YOUR METHOD CALL HERE
+				task1();
+
 				break;
 			case 2:
 				System.out.println("*** DFS with cheapest edge first ***");
-				// PUT YOUR METHOD CALL HERE
+
+				task2();
 				break;
 			case 3:
 				System.out.println("*** DFS with path optimisation ***");
-				// PUT YOUR METHOD CALL HERE
+				task3();
 				break;
 			case 4:
 				System.out

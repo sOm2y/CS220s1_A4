@@ -1,0 +1,1091 @@
+Number of cities to initialize (25 to 51) [51]: 
+City: Auckland
+    Route to: Adelaide for $300.0
+    Route to: Apia for $180.0
+    Route to: Buenos Aires for $1200.0
+    Route to: Honolulu for $700.0
+    Route to: Los Angeles for $1150.0
+
+City: Adelaide
+    Route to: Auckland for $300.0
+
+City: Apia
+    Route to: Auckland for $180.0
+
+City: Athens
+    Route to: Berlin for $150.0
+    Route to: Cairo for $250.0
+    Route to: Dubai for $280.0
+    Route to: Frankfurt for $150.0
+    Route to: Jerusalem for $250.0
+    Route to: London for $250.0
+
+City: Beijing
+    Route to: Berlin for $1000.0
+    Route to: Chongqing for $200.0
+    Route to: Dubai for $950.0
+    Route to: Geneva for $1050.0
+    Route to: Guangdong for $150.0
+    Route to: Hong Kong for $160.0
+    Route to: Honolulu for $650.0
+    Route to: Jakarta for $350.0
+    Route to: Kolkata for $400.0
+    Route to: London for $1050.0
+    Route to: Los Angeles for $1250.0
+
+City: Berlin
+    Route to: Athens for $150.0
+    Route to: Beijing for $1000.0
+    Route to: Frankfurt for $100.0
+    Route to: Geneva for $120.0
+    Route to: Istanbul for $220.0
+    Route to: Jerusalem for $250.0
+    Route to: London for $150.0
+
+City: Buenos Aires
+    Route to: Auckland for $1200.0
+    Route to: Frankfurt for $1500.0
+    Route to: Geneva for $1400.0
+    Route to: Honolulu for $1200.0
+    Route to: Johannesburg for $1000.0
+    Route to: London for $1450.0
+    Route to: Los Angeles for $1000.0
+
+City: Cairo
+    Route to: Athens for $250.0
+    Route to: Dubai for $250.0
+    Route to: Frankfurt for $250.0
+    Route to: Geneva for $350.0
+    Route to: Hong Kong for $1350.0
+    Route to: Istanbul for $200.0
+    Route to: Jerusalem for $400.0
+    Route to: Johannesburg for $900.0
+    Route to: London for $300.0
+
+City: Cancun
+    Route to: Los Angeles for $350.0
+
+City: Chongqing
+    Route to: Beijing for $200.0
+    Route to: Dubai for $1200.0
+    Route to: Guangdong for $150.0
+
+City: Denpasar
+    Route to: Dubai for $1200.0
+    Route to: Jakarta for $200.0
+
+City: Dubai
+    Route to: Athens for $280.0
+    Route to: Beijing for $950.0
+    Route to: Cairo for $250.0
+    Route to: Chongqing for $1200.0
+    Route to: Denpasar for $1200.0
+    Route to: Frankfurt for $900.0
+    Route to: Geneva for $800.0
+    Route to: Hong Kong for $1000.0
+    Route to: Istanbul for $250.0
+    Route to: Jakarta for $1000.0
+    Route to: Johannesburg for $1200.0
+    Route to: Kolkata for $900.0
+    Route to: London for $950.0
+    Route to: Los Angeles for $1600.0
+
+City: El Paso
+    Route to: Los Angeles for $150.0
+
+City: Frankfurt
+    Route to: Athens for $150.0
+    Route to: Berlin for $100.0
+    Route to: Buenos Aires for $1500.0
+    Route to: Cairo for $250.0
+    Route to: Dubai for $900.0
+    Route to: Geneva for $200.0
+    Route to: Guangdong for $1200.0
+    Route to: Hong Kong for $1300.0
+    Route to: Istanbul for $200.0
+    Route to: Jakarta for $1500.0
+    Route to: Jerusalem for $300.0
+    Route to: Johannesburg for $950.0
+    Route to: Kolkata for $1100.0
+    Route to: London for $200.0
+    Route to: Los Angeles for $900.0
+
+City: Geneva
+    Route to: Beijing for $1050.0
+    Route to: Berlin for $120.0
+    Route to: Buenos Aires for $1400.0
+    Route to: Cairo for $350.0
+    Route to: Dubai for $800.0
+    Route to: Frankfurt for $200.0
+    Route to: Hong Kong for $1200.0
+    Route to: Jerusalem for $450.0
+    Route to: London for $450.0
+
+City: Guangdong
+    Route to: Beijing for $150.0
+    Route to: Chongqing for $150.0
+    Route to: Frankfurt for $1200.0
+    Route to: Hong Kong for $50.0
+    Route to: Jakarta for $250.0
+    Route to: Kolkata for $250.0
+    Route to: London for $800.0
+
+City: Hong Kong
+    Route to: Beijing for $160.0
+    Route to: Cairo for $1350.0
+    Route to: Dubai for $1000.0
+    Route to: Frankfurt for $1300.0
+    Route to: Geneva for $1200.0
+    Route to: Guangdong for $50.0
+    Route to: Honolulu for $1000.0
+    Route to: Istanbul for $850.0
+    Route to: Jakarta for $200.0
+    Route to: Kolkata for $250.0
+    Route to: London for $750.0
+
+City: Honolulu
+    Route to: Auckland for $700.0
+    Route to: Beijing for $650.0
+    Route to: Buenos Aires for $1200.0
+    Route to: Hong Kong for $1000.0
+    Route to: Los Angeles for $600.0
+
+City: Istanbul
+    Route to: Berlin for $220.0
+    Route to: Cairo for $200.0
+    Route to: Dubai for $250.0
+    Route to: Frankfurt for $200.0
+    Route to: Hong Kong for $850.0
+    Route to: London for $450.0
+
+City: Jakarta
+    Route to: Beijing for $350.0
+    Route to: Denpasar for $200.0
+    Route to: Dubai for $1000.0
+    Route to: Frankfurt for $1500.0
+    Route to: Guangdong for $250.0
+    Route to: Hong Kong for $200.0
+    Route to: Kolkata for $250.0
+    Route to: London for $1080.0
+
+City: Jerusalem
+    Route to: Athens for $250.0
+    Route to: Berlin for $250.0
+    Route to: Cairo for $400.0
+    Route to: Frankfurt for $300.0
+    Route to: Geneva for $450.0
+    Route to: Johannesburg for $850.0
+    Route to: London for $550.0
+
+City: Johannesburg
+    Route to: Buenos Aires for $1000.0
+    Route to: Cairo for $900.0
+    Route to: Dubai for $1200.0
+    Route to: Frankfurt for $950.0
+    Route to: Jerusalem for $850.0
+    Route to: London for $1100.0
+
+City: Kolkata
+    Route to: Beijing for $400.0
+    Route to: Dubai for $900.0
+    Route to: Frankfurt for $1100.0
+    Route to: Guangdong for $250.0
+    Route to: Hong Kong for $250.0
+    Route to: Jakarta for $250.0
+    Route to: London for $1000.0
+
+City: London
+    Route to: Athens for $250.0
+    Route to: Beijing for $1050.0
+    Route to: Berlin for $150.0
+    Route to: Buenos Aires for $1450.0
+    Route to: Cairo for $300.0
+    Route to: Dubai for $950.0
+    Route to: Frankfurt for $200.0
+    Route to: Geneva for $450.0
+    Route to: Guangdong for $800.0
+    Route to: Hong Kong for $750.0
+    Route to: Istanbul for $450.0
+    Route to: Jakarta for $1080.0
+    Route to: Jerusalem for $550.0
+    Route to: Johannesburg for $1100.0
+    Route to: Kolkata for $1000.0
+    Route to: Los Angeles for $1100.0
+
+City: Los Angeles
+    Route to: Auckland for $1150.0
+    Route to: Beijing for $1250.0
+    Route to: Buenos Aires for $1000.0
+    Route to: Cancun for $350.0
+    Route to: Dubai for $1600.0
+    Route to: El Paso for $150.0
+    Route to: Frankfurt for $900.0
+    Route to: Honolulu for $600.0
+    Route to: London for $1100.0
+
+25 cities and 174 routes loaded.
+
+
+1) Perform plain DFS
+2) Perform DFS with cheapest edge first
+3) Perform DFS with path optimisation
+4) Perform DFS with path optimisation and cheapest edge first
+5) Perform plain BFS
+6) Perform BFS with cheapest edge first
+7) Perform BFS with path optimisation
+8) Perform BFS with path optimisation and cheapest edge first
+9) Perform the Dijkstra algorithm (optional - you do not need to implement this)
+0) Quit
+Your choice: 
+
+*** Plain DFS ***
+Is stack empty? No, so look at grey city on top of stack:Auckland
+Checking route to Adelaide
+Incrementing steps from0to1
+Adelaide is still white
+Adelaide to grey
+Adelaide pushing
+Is stack empty? No, so look at grey city on top of stack:Adelaide
+Checking route to Auckland
+Incrementing steps from1to2
+Adelaide poping out
+Is stack empty? No, so look at grey city on top of stack:Auckland
+Checking route to Apia
+Incrementing steps from2to3
+Apia is still white
+Apia to grey
+Apia pushing
+Is stack empty? No, so look at grey city on top of stack:Apia
+Checking route to Auckland
+Incrementing steps from3to4
+Apia poping out
+Is stack empty? No, so look at grey city on top of stack:Auckland
+Checking route to Buenos Aires
+Incrementing steps from4to5
+Buenos Aires is still white
+Buenos Aires to grey
+Buenos Aires pushing
+Is stack empty? No, so look at grey city on top of stack:Buenos Aires
+Checking route to Auckland
+Incrementing steps from5to6
+Is stack empty? No, so look at grey city on top of stack:Buenos Aires
+Checking route to Frankfurt
+Incrementing steps from6to7
+Frankfurt is still white
+Frankfurt to grey
+Frankfurt pushing
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Athens
+Incrementing steps from7to8
+Athens is still white
+Athens to grey
+Athens pushing
+Is stack empty? No, so look at grey city on top of stack:Athens
+Checking route to Berlin
+Incrementing steps from8to9
+Berlin is still white
+Berlin to grey
+Berlin pushing
+Is stack empty? No, so look at grey city on top of stack:Berlin
+Checking route to Athens
+Incrementing steps from9to10
+Is stack empty? No, so look at grey city on top of stack:Berlin
+Checking route to Beijing
+Incrementing steps from10to11
+Beijing is still white
+Beijing to grey
+Beijing pushing
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to Berlin
+Incrementing steps from11to12
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to Chongqing
+Incrementing steps from12to13
+Chongqing is still white
+Chongqing to grey
+Chongqing pushing
+Is stack empty? No, so look at grey city on top of stack:Chongqing
+Checking route to Beijing
+Incrementing steps from13to14
+Is stack empty? No, so look at grey city on top of stack:Chongqing
+Checking route to Dubai
+Incrementing steps from14to15
+Dubai is still white
+Dubai to grey
+Dubai pushing
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Athens
+Incrementing steps from15to16
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Beijing
+Incrementing steps from16to17
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Cairo
+Incrementing steps from17to18
+Cairo is still white
+Cairo to grey
+Cairo pushing
+Is stack empty? No, so look at grey city on top of stack:Cairo
+Checking route to Athens
+Incrementing steps from18to19
+Is stack empty? No, so look at grey city on top of stack:Cairo
+Checking route to Dubai
+Incrementing steps from19to20
+Is stack empty? No, so look at grey city on top of stack:Cairo
+Checking route to Frankfurt
+Incrementing steps from20to21
+Is stack empty? No, so look at grey city on top of stack:Cairo
+Checking route to Geneva
+Incrementing steps from21to22
+Geneva is still white
+Geneva to grey
+Geneva pushing
+Is stack empty? No, so look at grey city on top of stack:Geneva
+Checking route to Beijing
+Incrementing steps from22to23
+Is stack empty? No, so look at grey city on top of stack:Geneva
+Checking route to Berlin
+Incrementing steps from23to24
+Is stack empty? No, so look at grey city on top of stack:Geneva
+Checking route to Buenos Aires
+Incrementing steps from24to25
+Is stack empty? No, so look at grey city on top of stack:Geneva
+Checking route to Cairo
+Incrementing steps from25to26
+Is stack empty? No, so look at grey city on top of stack:Geneva
+Checking route to Dubai
+Incrementing steps from26to27
+Is stack empty? No, so look at grey city on top of stack:Geneva
+Checking route to Frankfurt
+Incrementing steps from27to28
+Is stack empty? No, so look at grey city on top of stack:Geneva
+Checking route to Hong Kong
+Incrementing steps from28to29
+Hong Kong is still white
+Hong Kong to grey
+Hong Kong pushing
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to Beijing
+Incrementing steps from29to30
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to Cairo
+Incrementing steps from30to31
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to Dubai
+Incrementing steps from31to32
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to Frankfurt
+Incrementing steps from32to33
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to Geneva
+Incrementing steps from33to34
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to Guangdong
+Incrementing steps from34to35
+Guangdong is still white
+Guangdong to grey
+Guangdong pushing
+Is stack empty? No, so look at grey city on top of stack:Guangdong
+Checking route to Beijing
+Incrementing steps from35to36
+Is stack empty? No, so look at grey city on top of stack:Guangdong
+Checking route to Chongqing
+Incrementing steps from36to37
+Is stack empty? No, so look at grey city on top of stack:Guangdong
+Checking route to Frankfurt
+Incrementing steps from37to38
+Is stack empty? No, so look at grey city on top of stack:Guangdong
+Checking route to Hong Kong
+Incrementing steps from38to39
+Is stack empty? No, so look at grey city on top of stack:Guangdong
+Checking route to Jakarta
+Incrementing steps from39to40
+Jakarta is still white
+Jakarta to grey
+Jakarta pushing
+Is stack empty? No, so look at grey city on top of stack:Jakarta
+Checking route to Beijing
+Incrementing steps from40to41
+Is stack empty? No, so look at grey city on top of stack:Jakarta
+Checking route to Denpasar
+Incrementing steps from41to42
+Denpasar is still white
+Denpasar to grey
+Denpasar pushing
+Is stack empty? No, so look at grey city on top of stack:Denpasar
+Checking route to Dubai
+Incrementing steps from42to43
+Is stack empty? No, so look at grey city on top of stack:Denpasar
+Checking route to Jakarta
+Incrementing steps from43to44
+Denpasar poping out
+Is stack empty? No, so look at grey city on top of stack:Jakarta
+Checking route to Dubai
+Incrementing steps from44to45
+Is stack empty? No, so look at grey city on top of stack:Jakarta
+Checking route to Frankfurt
+Incrementing steps from45to46
+Is stack empty? No, so look at grey city on top of stack:Jakarta
+Checking route to Guangdong
+Incrementing steps from46to47
+Is stack empty? No, so look at grey city on top of stack:Jakarta
+Checking route to Hong Kong
+Incrementing steps from47to48
+Is stack empty? No, so look at grey city on top of stack:Jakarta
+Checking route to Kolkata
+Incrementing steps from48to49
+Kolkata is still white
+Kolkata to grey
+Kolkata pushing
+Is stack empty? No, so look at grey city on top of stack:Kolkata
+Checking route to Beijing
+Incrementing steps from49to50
+Is stack empty? No, so look at grey city on top of stack:Kolkata
+Checking route to Dubai
+Incrementing steps from50to51
+Is stack empty? No, so look at grey city on top of stack:Kolkata
+Checking route to Frankfurt
+Incrementing steps from51to52
+Is stack empty? No, so look at grey city on top of stack:Kolkata
+Checking route to Guangdong
+Incrementing steps from52to53
+Is stack empty? No, so look at grey city on top of stack:Kolkata
+Checking route to Hong Kong
+Incrementing steps from53to54
+Is stack empty? No, so look at grey city on top of stack:Kolkata
+Checking route to Jakarta
+Incrementing steps from54to55
+Is stack empty? No, so look at grey city on top of stack:Kolkata
+Checking route to London
+Incrementing steps from55to56
+London is still white
+London to grey
+London pushing
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Athens
+Incrementing steps from56to57
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Beijing
+Incrementing steps from57to58
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Berlin
+Incrementing steps from58to59
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Buenos Aires
+Incrementing steps from59to60
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Cairo
+Incrementing steps from60to61
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Dubai
+Incrementing steps from61to62
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Frankfurt
+Incrementing steps from62to63
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Geneva
+Incrementing steps from63to64
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Guangdong
+Incrementing steps from64to65
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Hong Kong
+Incrementing steps from65to66
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Istanbul
+Incrementing steps from66to67
+Istanbul is still white
+Istanbul to grey
+Istanbul pushing
+Is stack empty? No, so look at grey city on top of stack:Istanbul
+Checking route to Berlin
+Incrementing steps from67to68
+Is stack empty? No, so look at grey city on top of stack:Istanbul
+Checking route to Cairo
+Incrementing steps from68to69
+Is stack empty? No, so look at grey city on top of stack:Istanbul
+Checking route to Dubai
+Incrementing steps from69to70
+Is stack empty? No, so look at grey city on top of stack:Istanbul
+Checking route to Frankfurt
+Incrementing steps from70to71
+Is stack empty? No, so look at grey city on top of stack:Istanbul
+Checking route to Hong Kong
+Incrementing steps from71to72
+Is stack empty? No, so look at grey city on top of stack:Istanbul
+Checking route to London
+Incrementing steps from72to73
+Istanbul poping out
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Jakarta
+Incrementing steps from73to74
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Jerusalem
+Incrementing steps from74to75
+Jerusalem is still white
+Jerusalem to grey
+Jerusalem pushing
+Is stack empty? No, so look at grey city on top of stack:Jerusalem
+Checking route to Athens
+Incrementing steps from75to76
+Is stack empty? No, so look at grey city on top of stack:Jerusalem
+Checking route to Berlin
+Incrementing steps from76to77
+Is stack empty? No, so look at grey city on top of stack:Jerusalem
+Checking route to Cairo
+Incrementing steps from77to78
+Is stack empty? No, so look at grey city on top of stack:Jerusalem
+Checking route to Frankfurt
+Incrementing steps from78to79
+Is stack empty? No, so look at grey city on top of stack:Jerusalem
+Checking route to Geneva
+Incrementing steps from79to80
+Is stack empty? No, so look at grey city on top of stack:Jerusalem
+Checking route to Johannesburg
+Incrementing steps from80to81
+Johannesburg is still white
+Johannesburg to grey
+Johannesburg pushing
+Is stack empty? No, so look at grey city on top of stack:Johannesburg
+Checking route to Buenos Aires
+Incrementing steps from81to82
+Is stack empty? No, so look at grey city on top of stack:Johannesburg
+Checking route to Cairo
+Incrementing steps from82to83
+Is stack empty? No, so look at grey city on top of stack:Johannesburg
+Checking route to Dubai
+Incrementing steps from83to84
+Is stack empty? No, so look at grey city on top of stack:Johannesburg
+Checking route to Frankfurt
+Incrementing steps from84to85
+Is stack empty? No, so look at grey city on top of stack:Johannesburg
+Checking route to Jerusalem
+Incrementing steps from85to86
+Is stack empty? No, so look at grey city on top of stack:Johannesburg
+Checking route to London
+Incrementing steps from86to87
+Johannesburg poping out
+Is stack empty? No, so look at grey city on top of stack:Jerusalem
+Checking route to London
+Incrementing steps from87to88
+Jerusalem poping out
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Johannesburg
+Incrementing steps from88to89
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Kolkata
+Incrementing steps from89to90
+Is stack empty? No, so look at grey city on top of stack:London
+Checking route to Los Angeles
+Incrementing steps from90to91
+Los Angeles is still white
+Los Angeles to grey
+Los Angeles pushing
+Is stack empty? No, so look at grey city on top of stack:Los Angeles
+Checking route to Auckland
+Incrementing steps from91to92
+Is stack empty? No, so look at grey city on top of stack:Los Angeles
+Checking route to Beijing
+Incrementing steps from92to93
+Is stack empty? No, so look at grey city on top of stack:Los Angeles
+Checking route to Buenos Aires
+Incrementing steps from93to94
+Is stack empty? No, so look at grey city on top of stack:Los Angeles
+Checking route to Cancun
+Incrementing steps from94to95
+Cancun is still white
+Cancun to grey
+Cancun pushing
+Is stack empty? No, so look at grey city on top of stack:Cancun
+Checking route to Los Angeles
+Incrementing steps from95to96
+Cancun poping out
+Is stack empty? No, so look at grey city on top of stack:Los Angeles
+Checking route to Dubai
+Incrementing steps from96to97
+Is stack empty? No, so look at grey city on top of stack:Los Angeles
+Checking route to El Paso
+Incrementing steps from97to98
+El Paso is still white
+El Paso to grey
+El Paso pushing
+Is stack empty? No, so look at grey city on top of stack:El Paso
+Checking route to Los Angeles
+Incrementing steps from98to99
+El Paso poping out
+Is stack empty? No, so look at grey city on top of stack:Los Angeles
+Checking route to Frankfurt
+Incrementing steps from99to100
+Is stack empty? No, so look at grey city on top of stack:Los Angeles
+Checking route to Honolulu
+Incrementing steps from100to101
+Honolulu is still white
+Honolulu to grey
+Honolulu pushing
+Is stack empty? No, so look at grey city on top of stack:Honolulu
+Checking route to Auckland
+Incrementing steps from101to102
+Is stack empty? No, so look at grey city on top of stack:Honolulu
+Checking route to Beijing
+Incrementing steps from102to103
+Is stack empty? No, so look at grey city on top of stack:Honolulu
+Checking route to Buenos Aires
+Incrementing steps from103to104
+Is stack empty? No, so look at grey city on top of stack:Honolulu
+Checking route to Hong Kong
+Incrementing steps from104to105
+Is stack empty? No, so look at grey city on top of stack:Honolulu
+Checking route to Los Angeles
+Incrementing steps from105to106
+Honolulu poping out
+Is stack empty? No, so look at grey city on top of stack:Los Angeles
+Checking route to London
+Incrementing steps from106to107
+Los Angeles poping out
+Is stack empty? No, so look at grey city on top of stack:London
+London poping out
+Is stack empty? No, so look at grey city on top of stack:Kolkata
+Kolkata poping out
+Is stack empty? No, so look at grey city on top of stack:Jakarta
+Checking route to London
+Incrementing steps from107to108
+Jakarta poping out
+Is stack empty? No, so look at grey city on top of stack:Guangdong
+Checking route to Kolkata
+Incrementing steps from108to109
+Is stack empty? No, so look at grey city on top of stack:Guangdong
+Checking route to London
+Incrementing steps from109to110
+Guangdong poping out
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to Honolulu
+Incrementing steps from110to111
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to Istanbul
+Incrementing steps from111to112
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to Jakarta
+Incrementing steps from112to113
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to Kolkata
+Incrementing steps from113to114
+Is stack empty? No, so look at grey city on top of stack:Hong Kong
+Checking route to London
+Incrementing steps from114to115
+Hong Kong poping out
+Is stack empty? No, so look at grey city on top of stack:Geneva
+Checking route to Jerusalem
+Incrementing steps from115to116
+Is stack empty? No, so look at grey city on top of stack:Geneva
+Checking route to London
+Incrementing steps from116to117
+Geneva poping out
+Is stack empty? No, so look at grey city on top of stack:Cairo
+Checking route to Hong Kong
+Incrementing steps from117to118
+Is stack empty? No, so look at grey city on top of stack:Cairo
+Checking route to Istanbul
+Incrementing steps from118to119
+Is stack empty? No, so look at grey city on top of stack:Cairo
+Checking route to Jerusalem
+Incrementing steps from119to120
+Is stack empty? No, so look at grey city on top of stack:Cairo
+Checking route to Johannesburg
+Incrementing steps from120to121
+Is stack empty? No, so look at grey city on top of stack:Cairo
+Checking route to London
+Incrementing steps from121to122
+Cairo poping out
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Chongqing
+Incrementing steps from122to123
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Denpasar
+Incrementing steps from123to124
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Frankfurt
+Incrementing steps from124to125
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Geneva
+Incrementing steps from125to126
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Hong Kong
+Incrementing steps from126to127
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Istanbul
+Incrementing steps from127to128
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Jakarta
+Incrementing steps from128to129
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Johannesburg
+Incrementing steps from129to130
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Kolkata
+Incrementing steps from130to131
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to London
+Incrementing steps from131to132
+Is stack empty? No, so look at grey city on top of stack:Dubai
+Checking route to Los Angeles
+Incrementing steps from132to133
+Dubai poping out
+Is stack empty? No, so look at grey city on top of stack:Chongqing
+Checking route to Guangdong
+Incrementing steps from133to134
+Chongqing poping out
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to Dubai
+Incrementing steps from134to135
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to Geneva
+Incrementing steps from135to136
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to Guangdong
+Incrementing steps from136to137
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to Hong Kong
+Incrementing steps from137to138
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to Honolulu
+Incrementing steps from138to139
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to Jakarta
+Incrementing steps from139to140
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to Kolkata
+Incrementing steps from140to141
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to London
+Incrementing steps from141to142
+Is stack empty? No, so look at grey city on top of stack:Beijing
+Checking route to Los Angeles
+Incrementing steps from142to143
+Beijing poping out
+Is stack empty? No, so look at grey city on top of stack:Berlin
+Checking route to Frankfurt
+Incrementing steps from143to144
+Is stack empty? No, so look at grey city on top of stack:Berlin
+Checking route to Geneva
+Incrementing steps from144to145
+Is stack empty? No, so look at grey city on top of stack:Berlin
+Checking route to Istanbul
+Incrementing steps from145to146
+Is stack empty? No, so look at grey city on top of stack:Berlin
+Checking route to Jerusalem
+Incrementing steps from146to147
+Is stack empty? No, so look at grey city on top of stack:Berlin
+Checking route to London
+Incrementing steps from147to148
+Berlin poping out
+Is stack empty? No, so look at grey city on top of stack:Athens
+Checking route to Cairo
+Incrementing steps from148to149
+Is stack empty? No, so look at grey city on top of stack:Athens
+Checking route to Dubai
+Incrementing steps from149to150
+Is stack empty? No, so look at grey city on top of stack:Athens
+Checking route to Frankfurt
+Incrementing steps from150to151
+Is stack empty? No, so look at grey city on top of stack:Athens
+Checking route to Jerusalem
+Incrementing steps from151to152
+Is stack empty? No, so look at grey city on top of stack:Athens
+Checking route to London
+Incrementing steps from152to153
+Athens poping out
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Berlin
+Incrementing steps from153to154
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Buenos Aires
+Incrementing steps from154to155
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Cairo
+Incrementing steps from155to156
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Dubai
+Incrementing steps from156to157
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Geneva
+Incrementing steps from157to158
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Guangdong
+Incrementing steps from158to159
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Hong Kong
+Incrementing steps from159to160
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Istanbul
+Incrementing steps from160to161
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Jakarta
+Incrementing steps from161to162
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Jerusalem
+Incrementing steps from162to163
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Johannesburg
+Incrementing steps from163to164
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Kolkata
+Incrementing steps from164to165
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to London
+Incrementing steps from165to166
+Is stack empty? No, so look at grey city on top of stack:Frankfurt
+Checking route to Los Angeles
+Incrementing steps from166to167
+Frankfurt poping out
+Is stack empty? No, so look at grey city on top of stack:Buenos Aires
+Checking route to Geneva
+Incrementing steps from167to168
+Is stack empty? No, so look at grey city on top of stack:Buenos Aires
+Checking route to Honolulu
+Incrementing steps from168to169
+Is stack empty? No, so look at grey city on top of stack:Buenos Aires
+Checking route to Johannesburg
+Incrementing steps from169to170
+Is stack empty? No, so look at grey city on top of stack:Buenos Aires
+Checking route to London
+Incrementing steps from170to171
+Is stack empty? No, so look at grey city on top of stack:Buenos Aires
+Checking route to Los Angeles
+Incrementing steps from171to172
+Buenos Aires poping out
+Is stack empty? No, so look at grey city on top of stack:Auckland
+Checking route to Honolulu
+Incrementing steps from172to173
+Is stack empty? No, so look at grey city on top of stack:Auckland
+Checking route to Los Angeles
+Incrementing steps from173to174
+Auckland poping out
+City: Auckland
+    Route to: Adelaide for $300.0
+    Route to: Apia for $180.0
+    Route to: Buenos Aires for $1200.0
+    Route to: Honolulu for $700.0
+    Route to: Los Angeles for $1150.0
+
+City: Adelaide
+    Route to: Auckland for $300.0
+
+City: Apia
+    Route to: Auckland for $180.0
+
+City: Athens
+    Route to: Berlin for $150.0
+    Route to: Cairo for $250.0
+    Route to: Dubai for $280.0
+    Route to: Frankfurt for $150.0
+    Route to: Jerusalem for $250.0
+    Route to: London for $250.0
+
+City: Beijing
+    Route to: Berlin for $1000.0
+    Route to: Chongqing for $200.0
+    Route to: Dubai for $950.0
+    Route to: Geneva for $1050.0
+    Route to: Guangdong for $150.0
+    Route to: Hong Kong for $160.0
+    Route to: Honolulu for $650.0
+    Route to: Jakarta for $350.0
+    Route to: Kolkata for $400.0
+    Route to: London for $1050.0
+    Route to: Los Angeles for $1250.0
+
+City: Berlin
+    Route to: Athens for $150.0
+    Route to: Beijing for $1000.0
+    Route to: Frankfurt for $100.0
+    Route to: Geneva for $120.0
+    Route to: Istanbul for $220.0
+    Route to: Jerusalem for $250.0
+    Route to: London for $150.0
+
+City: Buenos Aires
+    Route to: Auckland for $1200.0
+    Route to: Frankfurt for $1500.0
+    Route to: Geneva for $1400.0
+    Route to: Honolulu for $1200.0
+    Route to: Johannesburg for $1000.0
+    Route to: London for $1450.0
+    Route to: Los Angeles for $1000.0
+
+City: Cairo
+    Route to: Athens for $250.0
+    Route to: Dubai for $250.0
+    Route to: Frankfurt for $250.0
+    Route to: Geneva for $350.0
+    Route to: Hong Kong for $1350.0
+    Route to: Istanbul for $200.0
+    Route to: Jerusalem for $400.0
+    Route to: Johannesburg for $900.0
+    Route to: London for $300.0
+
+City: Cancun
+    Route to: Los Angeles for $350.0
+
+City: Chongqing
+    Route to: Beijing for $200.0
+    Route to: Dubai for $1200.0
+    Route to: Guangdong for $150.0
+
+City: Denpasar
+    Route to: Dubai for $1200.0
+    Route to: Jakarta for $200.0
+
+City: Dubai
+    Route to: Athens for $280.0
+    Route to: Beijing for $950.0
+    Route to: Cairo for $250.0
+    Route to: Chongqing for $1200.0
+    Route to: Denpasar for $1200.0
+    Route to: Frankfurt for $900.0
+    Route to: Geneva for $800.0
+    Route to: Hong Kong for $1000.0
+    Route to: Istanbul for $250.0
+    Route to: Jakarta for $1000.0
+    Route to: Johannesburg for $1200.0
+    Route to: Kolkata for $900.0
+    Route to: London for $950.0
+    Route to: Los Angeles for $1600.0
+
+City: El Paso
+    Route to: Los Angeles for $150.0
+
+City: Frankfurt
+    Route to: Athens for $150.0
+    Route to: Berlin for $100.0
+    Route to: Buenos Aires for $1500.0
+    Route to: Cairo for $250.0
+    Route to: Dubai for $900.0
+    Route to: Geneva for $200.0
+    Route to: Guangdong for $1200.0
+    Route to: Hong Kong for $1300.0
+    Route to: Istanbul for $200.0
+    Route to: Jakarta for $1500.0
+    Route to: Jerusalem for $300.0
+    Route to: Johannesburg for $950.0
+    Route to: Kolkata for $1100.0
+    Route to: London for $200.0
+    Route to: Los Angeles for $900.0
+
+City: Geneva
+    Route to: Beijing for $1050.0
+    Route to: Berlin for $120.0
+    Route to: Buenos Aires for $1400.0
+    Route to: Cairo for $350.0
+    Route to: Dubai for $800.0
+    Route to: Frankfurt for $200.0
+    Route to: Hong Kong for $1200.0
+    Route to: Jerusalem for $450.0
+    Route to: London for $450.0
+
+City: Guangdong
+    Route to: Beijing for $150.0
+    Route to: Chongqing for $150.0
+    Route to: Frankfurt for $1200.0
+    Route to: Hong Kong for $50.0
+    Route to: Jakarta for $250.0
+    Route to: Kolkata for $250.0
+    Route to: London for $800.0
+
+City: Hong Kong
+    Route to: Beijing for $160.0
+    Route to: Cairo for $1350.0
+    Route to: Dubai for $1000.0
+    Route to: Frankfurt for $1300.0
+    Route to: Geneva for $1200.0
+    Route to: Guangdong for $50.0
+    Route to: Honolulu for $1000.0
+    Route to: Istanbul for $850.0
+    Route to: Jakarta for $200.0
+    Route to: Kolkata for $250.0
+    Route to: London for $750.0
+
+City: Honolulu
+    Route to: Auckland for $700.0
+    Route to: Beijing for $650.0
+    Route to: Buenos Aires for $1200.0
+    Route to: Hong Kong for $1000.0
+    Route to: Los Angeles for $600.0
+
+City: Istanbul
+    Route to: Berlin for $220.0
+    Route to: Cairo for $200.0
+    Route to: Dubai for $250.0
+    Route to: Frankfurt for $200.0
+    Route to: Hong Kong for $850.0
+    Route to: London for $450.0
+
+City: Jakarta
+    Route to: Beijing for $350.0
+    Route to: Denpasar for $200.0
+    Route to: Dubai for $1000.0
+    Route to: Frankfurt for $1500.0
+    Route to: Guangdong for $250.0
+    Route to: Hong Kong for $200.0
+    Route to: Kolkata for $250.0
+    Route to: London for $1080.0
+
+City: Jerusalem
+    Route to: Athens for $250.0
+    Route to: Berlin for $250.0
+    Route to: Cairo for $400.0
+    Route to: Frankfurt for $300.0
+    Route to: Geneva for $450.0
+    Route to: Johannesburg for $850.0
+    Route to: London for $550.0
+
+City: Johannesburg
+    Route to: Buenos Aires for $1000.0
+    Route to: Cairo for $900.0
+    Route to: Dubai for $1200.0
+    Route to: Frankfurt for $950.0
+    Route to: Jerusalem for $850.0
+    Route to: London for $1100.0
+
+City: Kolkata
+    Route to: Beijing for $400.0
+    Route to: Dubai for $900.0
+    Route to: Frankfurt for $1100.0
+    Route to: Guangdong for $250.0
+    Route to: Hong Kong for $250.0
+    Route to: Jakarta for $250.0
+    Route to: London for $1000.0
+
+City: London
+    Route to: Athens for $250.0
+    Route to: Beijing for $1050.0
+    Route to: Berlin for $150.0
+    Route to: Buenos Aires for $1450.0
+    Route to: Cairo for $300.0
+    Route to: Dubai for $950.0
+    Route to: Frankfurt for $200.0
+    Route to: Geneva for $450.0
+    Route to: Guangdong for $800.0
+    Route to: Hong Kong for $750.0
+    Route to: Istanbul for $450.0
+    Route to: Jakarta for $1080.0
+    Route to: Jerusalem for $550.0
+    Route to: Johannesburg for $1100.0
+    Route to: Kolkata for $1000.0
+    Route to: Los Angeles for $1100.0
+
+City: Los Angeles
+    Route to: Auckland for $1150.0
+    Route to: Beijing for $1250.0
+    Route to: Buenos Aires for $1000.0
+    Route to: Cancun for $350.0
+    Route to: Dubai for $1600.0
+    Route to: El Paso for $150.0
+    Route to: Frankfurt for $900.0
+    Route to: Honolulu for $600.0
+    Route to: London for $1100.0
+
+25 cities and 174 routes loaded.
+
+Sorting steps taken (if any): 0
+Total steps taken: 174
+Number of cities to initialize (25 to 51) [51]: 
