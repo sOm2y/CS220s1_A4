@@ -40,8 +40,8 @@ public class TraversalProgram {
 	private int sortSteps; // use this field to count the number of comparison
 							// steps in sorting, where applicable (algorithms
 							// with "cheapest edge first" only)
-
 	private CityStack cityStack;
+	private CityQueue cityQueue;
 
 	// These are convenience methods you may wish to use
 	private int initWhiteCities() {
@@ -87,15 +87,7 @@ public class TraversalProgram {
 
 			int routeLength = cityStack.getStackTop().getRoutes().length;
 
-			if (cityStack.getStackTop().getLastRouteChecked() < routeLength - 1) { // if
-																					// it
-																					// is
-																					// not
-																					// last
-																					// route
-																					// of
-																					// this
-																					// stack
+			if (cityStack.getStackTop().getLastRouteChecked() < routeLength - 1) {
 
 				cityStack.getStackTop().setLastRouteChecked( // set next route
 																// of stack
@@ -108,11 +100,7 @@ public class TraversalProgram {
 						+ (steps + 1));
 				steps++; // step +1
 			}
-			int destCity = cityStack.getStackTop().getRoutes()[cityStack // get
-																			// destination
-																			// of
-																			// this
-																			// route
+			int destCity = cityStack.getStackTop().getRoutes()[cityStack
 					.getStackTop().getLastRouteChecked()].getDestination();
 			if (whiteCities[destCity] != -1) { // if destination is white
 				System.out.println(cities[destCity].getName()
@@ -122,18 +110,7 @@ public class TraversalProgram {
 
 				cityStack.push(cities[destCity]); // push to stack
 				System.out.println(cities[destCity].getName() + " pushing");
-			} else if (cityStack.getStackTop().getLastRouteChecked() >= routeLength - 1) { // if
-																							// destination
-																							// is
-																							// grey
-																							// and
-																							// it's
-																							// the
-																							// last
-																							// routes
-																							// of
-																							// this
-																							// stack
+			} else if (cityStack.getStackTop().getLastRouteChecked() >= routeLength - 1) {
 				System.out.println(cityStack.getStackTop().getName()
 						+ " poping out");
 				cityStack.pop(); // pop out this stack
@@ -164,16 +141,7 @@ public class TraversalProgram {
 
 			int routeLength = cityStack.getStackTop().getSortedRoutes().length;
 
-			if (cityStack.getStackTop().getLastRouteChecked() < routeLength - 1) { // if
-																					// it
-																					// is
-																					// not
-																					// last
-																					// route
-																					// of
-																					// this
-																					// stack
-
+			if (cityStack.getStackTop().getLastRouteChecked() < routeLength - 1) {
 				cityStack.getStackTop().setLastRouteChecked( // set next route
 																// of stack
 						cityStack.getStackTop().getLastRouteChecked() + 1);
@@ -187,11 +155,7 @@ public class TraversalProgram {
 						+ (steps + 1));
 				steps++; // step +1
 			}
-			int destCity = cityStack.getStackTop().getSortedRoutes()[cityStack // get
-																				// destination
-																				// of
-																				// this
-																				// route
+			int destCity = cityStack.getStackTop().getSortedRoutes()[cityStack
 					.getStackTop().getLastRouteChecked()].getDestination();
 			if (whiteCities[destCity] != -1) { // if destination is white
 				System.out.println(cities[destCity].getName()
@@ -201,18 +165,7 @@ public class TraversalProgram {
 
 				cityStack.push(cities[destCity]); // push to stack
 				System.out.println(cities[destCity].getName() + " pushing");
-			} else if (cityStack.getStackTop().getLastRouteChecked() >= routeLength - 1) { // if
-																							// destination
-																							// is
-																							// grey
-																							// and
-																							// it's
-																							// the
-																							// last
-																							// routes
-																							// of
-																							// this
-																							// stack
+			} else if (cityStack.getStackTop().getLastRouteChecked() >= routeLength - 1) {
 				System.out.println(cityStack.getStackTop().getName()
 						+ " poping out");
 				cityStack.pop(); // pop out this stack
@@ -235,67 +188,242 @@ public class TraversalProgram {
 		}
 
 		while (!cityStack.isEmpty()) {
-			System.out
-					.println("Is stack empty? No, so look at grey city on top of stack:"
-							+ cityStack.getStackTop().getName());
-
 			int routeLength = cityStack.getStackTop().getRoutes().length;
 
 			if (cityStack.getStackTop().getLastRouteChecked() < routeLength - 1) {
 
 				cityStack.getStackTop().setLastRouteChecked( // set next route
-																// of stack
 						cityStack.getStackTop().getLastRouteChecked() + 1);
-				System.out.println("Checking route to "
-						+ cities[cityStack.getStackTop().getRoutes()[cityStack
-								.getStackTop().getLastRouteChecked()]
-								.getDestination()].getName());
-				System.out.println("Incrementing steps from" + (steps) + "to"
-						+ (steps + 1));
 				steps++; // step +1
 			}
 			int destCity = cityStack.getStackTop().getRoutes()[cityStack // get
-
 					.getStackTop().getLastRouteChecked()].getDestination();
 			double destCost = cityStack.getStackTop().getRoutes()[cityStack
 					.getStackTop().getLastRouteChecked()].getCost();
 			double lastDestCost = cityStack.getStackTop().getCostTo();
 			double totalCost = destCost + lastDestCost;
-			double destCostTo =cities[destCity].getCostTo();
-			System.out.println(totalCost);
-			System.out.println(destCostTo);
-			if(totalCost<destCostTo)
-				System.out.print(totalCost+"<"+destCostTo);
+			double destCostTo = cities[destCity].getCostTo();
+
 			if (whiteCities[destCity] != -1) { // if destination is white
-				System.out.println(cities[destCity].getName()
-						+ " is still white");
+
 				whiteCities[destCity] = -1; // let it to grey
-				System.out.println(cities[destCity].getName() + " to grey");
-
 				cityStack.push(cities[destCity]); // push to stack
-				System.out.println(cities[destCity].getName() + " pushing");
 				cityStack.getStackTop().setCostTo(totalCost);
-
-				System.out.println("Updating: Setting cost to "
-						+ cityStack.getStackTop().getName() + totalCost);
 
 			} else {
 				if (totalCost < destCostTo) {
-
 					cityStack.push(cities[destCity]);
-					whiteCities[destCity] = -1;
-					cityStack.getStackTop().setCostTo(destCost + lastDestCost);
+					cityStack.getStackTop().setCostTo(totalCost);
+					cityStack.getStackTop().setLastRouteChecked(-1);
 				}
 				if (cityStack.getStackTop().getLastRouteChecked() >= routeLength - 1) {
-					// the last routes of this stack
-					System.out.println(cityStack.getStackTop().getName()
-							+ " poping out");
 					cityStack.pop(); // pop out this stack
 
 				}
 			}
 		}
 	}
+
+	public void task4() {
+		sortSteps = initWhiteCities(); // initialise city
+		steps = sortSteps;
+		System.out.println("steps incurred in sorting cities" + steps);
+
+		cityStack = new CityStack();
+
+		if (cityStack.isEmpty()) { // initialise stack
+			cityStack.push(cities[0]); // push auckland to stack
+			whiteCities[0] = -1; // set auckland to grey
+			cities[nextWhiteCity].setCostTo(0); // set cost
+		}
+
+		while (!cityStack.isEmpty()) {
+			int routeLength = cityStack.getStackTop().getSortedRoutes().length;
+
+			if (cityStack.getStackTop().getLastRouteChecked() < routeLength - 1) {
+
+				cityStack.getStackTop().setLastRouteChecked( // set next route
+						cityStack.getStackTop().getLastRouteChecked() + 1);
+				steps++; // step +1
+			}
+			int destCity = cityStack.getStackTop().getSortedRoutes()[cityStack // get
+					.getStackTop().getLastRouteChecked()].getDestination();
+			double destCost = cityStack.getStackTop().getSortedRoutes()[cityStack
+					.getStackTop().getLastRouteChecked()].getCost();
+			double lastDestCost = cityStack.getStackTop().getCostTo();
+			double totalCost = destCost + lastDestCost;
+			double destCostTo = cities[destCity].getCostTo();
+
+			if (whiteCities[destCity] != -1) { // if destination is white
+
+				whiteCities[destCity] = -1; // let it to grey
+				cityStack.push(cities[destCity]); // push to stack
+				cityStack.getStackTop().setCostTo(totalCost);
+
+			} else {
+				if (totalCost < destCostTo) {
+					cityStack.push(cities[destCity]);
+					cityStack.getStackTop().setCostTo(totalCost);
+					cityStack.getStackTop().setLastRouteChecked(-1);
+				}
+				if (cityStack.getStackTop().getLastRouteChecked() >= routeLength - 1) {
+					cityStack.pop(); // pop out this stack
+
+				}
+			}
+		}
+	}
+
+	public void task5() {
+		initWhiteCities();
+		cityQueue = new CityQueue();
+						
+		if (cityQueue.isEmpty()) { // initialise stack
+			cityQueue.enqueue(cities[0]); // push auckland to stack
+			whiteCities[0] = -1; // set auckland to grey
+			cities[0].setCostTo(0); // set cost
+		}
+		
+
+		
+		while(!cityQueue.isEmpty()){
+			int routeLength =cityQueue.getQueueFront().getRoutes().length;
+			
+			for(int i=0;i<routeLength;i++){
+				cityQueue.getQueueFront().setLastRouteChecked(i);
+				int destCity = cityQueue.getQueueFront().getRoutes()[i].getDestination();
+				steps++;
+				if(whiteCities[destCity]!=-1){
+					cityQueue.enqueue(cities[destCity]);
+					whiteCities[destCity] = -1;
+					cities[destCity].setCostTo(cityQueue.getQueueFront().getCostTo()+cityQueue.getQueueFront().getRoute(cityQueue.getQueueFront().getLastRouteChecked()).getCost());
+				//	System.out.println(cities[destCity].getCostTo());
+				}
+			}
+			cityQueue.dequeue();
+		}
+		
+	}
+	public void task6() {
+		sortSteps = initWhiteCities(); // initialise city
+		steps = sortSteps;
+		cityQueue = new CityQueue();
+						
+		if (cityQueue.isEmpty()) { // initialise stack
+			cityQueue.enqueue(cities[0]); // push auckland to stack
+			whiteCities[0] = -1; // set auckland to grey
+			cities[0].setCostTo(0); // set cost
+		}
+		
+
+		while(!cityQueue.isEmpty()){
+			int routeLength =cityQueue.getQueueFront().getSortedRoutes().length;
+			
+			for(int i=0;i<routeLength;i++){
+				cityQueue.getQueueFront().setLastRouteChecked(i);
+				int destCity = cityQueue.getQueueFront().getSortedRoutes()[i].getDestination();
+				steps++;
+				if(whiteCities[destCity]!=-1){
+					cityQueue.enqueue(cities[destCity]);
+					whiteCities[destCity] = -1;
+					cities[destCity].setCostTo(cityQueue.getQueueFront().getCostTo()+cityQueue.getQueueFront().getSortedRoutes()[cityQueue.getQueueFront().getLastRouteChecked()].getCost());
+					System.out.println(cities[destCity].getCostTo());
+				}
+			}
+			cityQueue.dequeue();
+		}
+		
+	}
+
+	
+	public void task7() {
+		initWhiteCities();
+		cityQueue = new CityQueue();
+						
+		if (cityQueue.isEmpty()) { // initialise stack
+			cityQueue.enqueue(cities[0]); // push auckland to stack
+			whiteCities[0] = -1; // set auckland to grey
+			cities[0].setCostTo(0); // set cost
+		}
+		
+		while(!cityQueue.isEmpty()){
+			int routeLength =cityQueue.getQueueFront().getRoutes().length;
+			
+			for(int i=0;i<routeLength;i++){
+				cityQueue.getQueueFront().setLastRouteChecked(i);
+				int destCity = cityQueue.getQueueFront().getRoutes()[i].getDestination();
+				double curCityCostTo = cityQueue.getQueueFront().getCostTo();
+				double destCityCost = cityQueue.getQueueFront().getRoute(cityQueue.getQueueFront().getLastRouteChecked()).getCost();
+			
+				steps++;
+				System.out.println(steps+" to "+(steps+1));
+				if(whiteCities[destCity]!=-1){
+					cityQueue.enqueue(cities[destCity]);
+					whiteCities[destCity] = -1;
+					cities[destCity].setCostTo(curCityCostTo+destCityCost);
+				//	System.out.println(cities[destCity].getCostTo());
+				}else{
+					System.out.println(cities[destCity].getName()+"already has a cost attached to it. Can we reach it cheaper via"+cityQueue.getQueueFront().getName());
+					if(curCityCostTo+destCityCost<cities[destCity].getCostTo()){
+						System.out.println("yes we can, change"+cities[destCity].getCostTo()+" to "+(curCityCostTo+destCityCost));
+						cities[destCity].setCostTo(curCityCostTo+destCityCost);
+						if(!cities[destCity].getProcessingStatus()){
+							System.out.println(cities[destCity].getName()+"is not in the queue.  need to requeue.");
+							cityQueue.enqueue(cities[destCity]);
+						}
+					}
+				}
+			}
+			cityQueue.dequeue();
+		}
+		
+	}
+	
+	public void task8(){
+		sortSteps = initWhiteCities(); // initialise city
+		steps = sortSteps;
+		cityQueue = new CityQueue();
+						
+		if (cityQueue.isEmpty()) { // initialise stack
+			cityQueue.enqueue(cities[0]); // push auckland to stack
+			whiteCities[0] = -1; // set auckland to grey
+			cities[0].setCostTo(0); // set cost
+		}
+		
+		while(!cityQueue.isEmpty()){
+			int routeLength =cityQueue.getQueueFront().getSortedRoutes().length;
+			
+			for(int i=0;i<routeLength;i++){
+				cityQueue.getQueueFront().setLastRouteChecked(i);
+				int destCity = cityQueue.getQueueFront().getSortedRoutes()[i].getDestination();
+				double curCityCostTo = cityQueue.getQueueFront().getCostTo();
+				double destCityCost = cityQueue.getQueueFront().getSortedRoutes()[cityQueue.getQueueFront().getLastRouteChecked()].getCost();
+			
+				steps++;
+				System.out.println(steps+" to "+(steps+1));
+				if(whiteCities[destCity]!=-1){
+					cityQueue.enqueue(cities[destCity]);
+					whiteCities[destCity] = -1;
+					cities[destCity].setCostTo(curCityCostTo+destCityCost);
+				//	System.out.println(cities[destCity].getCostTo());
+				}else{
+					System.out.println(cities[destCity].getName()+"already has a cost attached to it. Can we reach it cheaper via"+cityQueue.getQueueFront().getName());
+					if(curCityCostTo+destCityCost<cities[destCity].getCostTo()){
+						System.out.println("yes we can, change"+cities[destCity].getCostTo()+" to "+(curCityCostTo+destCityCost));
+						cities[destCity].setCostTo(curCityCostTo+destCityCost);
+						if(!cities[destCity].getProcessingStatus()){
+							System.out.println(cities[destCity].getName()+"is not in the queue.  need to requeue.");
+							cityQueue.enqueue(cities[destCity]);
+						}
+					}
+				}
+			}
+			cityQueue.dequeue();
+		}
+	}
+		
+	
+	// This is a diagnostic method used by start()
 
 	// This is a diagnostic method used by start()
 	public void printCitiesAndPaths() {
@@ -324,6 +452,7 @@ public class TraversalProgram {
 				+ " routes loaded.");
 		System.out.println();
 	}
+	
 
 	// start() method - you will need to amend this method here to call your own
 	// traversal methods above
@@ -370,39 +499,44 @@ public class TraversalProgram {
 			switch (choice) {
 			case 1:
 				System.out.println("*** Plain DFS ***");
-
+				// PUT YOUR METHOD CALL HERE
 				task1();
-
 				break;
 			case 2:
 				System.out.println("*** DFS with cheapest edge first ***");
-
+				// PUT YOUR METHOD CALL HERE
 				task2();
 				break;
 			case 3:
 				System.out.println("*** DFS with path optimisation ***");
+				// PUT YOUR METHOD CALL HERE
 				task3();
 				break;
 			case 4:
 				System.out
 						.println("*** DFS with path optimisation and cheapest edge first ***");
 				// PUT YOUR METHOD CALL HERE
+				task4();
 				break;
 			case 5:
 				System.out.println("*** Plain BFS ***");
 				// PUT YOUR METHOD CALL HERE
+				task5();
 				break;
 			case 6:
 				System.out.println("*** BFS with cheapest edge first ***");
 				// PUT YOUR METHOD CALL HERE
+				task6();
 				break;
 			case 7:
 				System.out.println("*** BFS with path optimisation ***");
 				// PUT YOUR METHOD CALL HERE
+				task7();
 				break;
 			case 8:
 				System.out
 						.println("*** BFS with path optimisation and cheapest edge first ***");
+				task8();
 				// PUT YOUR METHOD CALL HERE
 				break;
 			case 9:
@@ -421,11 +555,10 @@ public class TraversalProgram {
 	// The following method initialises the cities and routes
 	public void initialiseCities() {
 		cities = new City[maxCities];
-		// Default prices used - FOR TESTING ONLY.
-		// DO NOT submit your assignment with these values.
-		// Download your individual assignment template instead.
-
+		// Prices individualised for AUID 1234567.
+		// Submit your assignment with these values.
 		// Add cities to the cities array
+		// for AUID 1234567
 		if (0 < maxCities) {
 			cities[0] = new City("Auckland");
 		}
@@ -581,18 +714,19 @@ public class TraversalProgram {
 		}
 
 		// Add routes to cities
+		// for AUID 1234567
 
 		routeCounter = 0;
 		if ((0 < maxCities) && (1 < maxCities)) {
-			cities[0].addRoute(1, 300); // Auckland to Adelaide
+			cities[0].addRoute(1, 297); // Auckland to Adelaide
 			routeCounter++;
-			cities[1].addRoute(0, 300); // Adelaide to Auckland
+			cities[1].addRoute(0, 297); // Adelaide to Auckland
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (2 < maxCities)) {
-			cities[0].addRoute(2, 180); // Auckland to Apia
+			cities[0].addRoute(2, 178.2); // Auckland to Apia
 			routeCounter++;
-			cities[2].addRoute(0, 180); // Apia to Auckland
+			cities[2].addRoute(0, 178.2); // Apia to Auckland
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (6 < maxCities)) {
@@ -602,45 +736,45 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (17 < maxCities)) {
-			cities[0].addRoute(17, 700); // Auckland to Honolulu
+			cities[0].addRoute(17, 693); // Auckland to Honolulu
 			routeCounter++;
-			cities[17].addRoute(0, 700); // Honolulu to Auckland
+			cities[17].addRoute(0, 693); // Honolulu to Auckland
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (24 < maxCities)) {
-			cities[0].addRoute(24, 1150); // Auckland to Los Angeles
+			cities[0].addRoute(24, 1138.5); // Auckland to Los Angeles
 			routeCounter++;
-			cities[24].addRoute(0, 1150); // Los Angeles to Auckland
+			cities[24].addRoute(0, 1138.5); // Los Angeles to Auckland
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (36 < maxCities)) {
-			cities[0].addRoute(36, 540); // Auckland to Perth
+			cities[0].addRoute(36, 534.6); // Auckland to Perth
 			routeCounter++;
-			cities[36].addRoute(0, 540); // Perth to Auckland
+			cities[36].addRoute(0, 534.6); // Perth to Auckland
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (39 < maxCities)) {
-			cities[0].addRoute(39, 1100); // Auckland to Santiago
+			cities[0].addRoute(39, 1089); // Auckland to Santiago
 			routeCounter++;
-			cities[39].addRoute(0, 1100); // Santiago to Auckland
+			cities[39].addRoute(0, 1089); // Santiago to Auckland
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (40 < maxCities)) {
-			cities[0].addRoute(40, 950); // Auckland to Seoul
+			cities[0].addRoute(40, 940.5); // Auckland to Seoul
 			routeCounter++;
-			cities[40].addRoute(0, 950); // Seoul to Auckland
+			cities[40].addRoute(0, 940.5); // Seoul to Auckland
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (42 < maxCities)) {
-			cities[0].addRoute(42, 1000); // Auckland to Singapore
+			cities[0].addRoute(42, 990); // Auckland to Singapore
 			routeCounter++;
-			cities[42].addRoute(0, 1000); // Singapore to Auckland
+			cities[42].addRoute(0, 990); // Singapore to Auckland
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (41 < maxCities)) {
-			cities[0].addRoute(41, 1100); // Auckland to Shanghai
+			cities[0].addRoute(41, 1089); // Auckland to Shanghai
 			routeCounter++;
-			cities[41].addRoute(0, 1100); // Shanghai to Auckland
+			cities[41].addRoute(0, 1089); // Shanghai to Auckland
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (43 < maxCities)) {
@@ -650,9 +784,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((0 < maxCities) && (45 < maxCities)) {
-			cities[0].addRoute(45, 900); // Auckland to Tokyo
+			cities[0].addRoute(45, 891); // Auckland to Tokyo
 			routeCounter++;
-			cities[45].addRoute(0, 900); // Tokyo to Auckland
+			cities[45].addRoute(0, 891); // Tokyo to Auckland
 			routeCounter++;
 		}
 		if ((1 < maxCities) && (26 < maxCities)) {
@@ -686,27 +820,27 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((2 < maxCities) && (26 < maxCities)) {
-			cities[2].addRoute(26, 220); // Apia to Melbourne
+			cities[2].addRoute(26, 217.8); // Apia to Melbourne
 			routeCounter++;
-			cities[26].addRoute(2, 220); // Melbourne to Apia
+			cities[26].addRoute(2, 217.8); // Melbourne to Apia
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (42 < maxCities)) {
-			cities[3].addRoute(42, 900); // Athens to Singapore
+			cities[3].addRoute(42, 891); // Athens to Singapore
 			routeCounter++;
-			cities[42].addRoute(3, 900); // Singapore to Athens
+			cities[42].addRoute(3, 891); // Singapore to Athens
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (5 < maxCities)) {
-			cities[3].addRoute(5, 150); // Athens to Berlin
+			cities[3].addRoute(5, 148.5); // Athens to Berlin
 			routeCounter++;
-			cities[5].addRoute(3, 150); // Berlin to Athens
+			cities[5].addRoute(3, 148.5); // Berlin to Athens
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (7 < maxCities)) {
-			cities[3].addRoute(7, 250); // Athens to Cairo
+			cities[3].addRoute(7, 247.5); // Athens to Cairo
 			routeCounter++;
-			cities[7].addRoute(3, 250); // Cairo to Athens
+			cities[7].addRoute(3, 247.5); // Cairo to Athens
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (11 < maxCities)) {
@@ -716,51 +850,51 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (13 < maxCities)) {
-			cities[3].addRoute(13, 150); // Athens to Frankfurt
+			cities[3].addRoute(13, 148.5); // Athens to Frankfurt
 			routeCounter++;
-			cities[13].addRoute(3, 150); // Frankfurt to Athens
+			cities[13].addRoute(3, 148.5); // Frankfurt to Athens
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (20 < maxCities)) {
-			cities[3].addRoute(20, 250); // Athens to Jerusalem
+			cities[3].addRoute(20, 247.5); // Athens to Jerusalem
 			routeCounter++;
-			cities[20].addRoute(3, 250); // Jerusalem to Athens
+			cities[20].addRoute(3, 247.5); // Jerusalem to Athens
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (23 < maxCities)) {
-			cities[3].addRoute(23, 250); // Athens to London
+			cities[3].addRoute(23, 247.5); // Athens to London
 			routeCounter++;
-			cities[23].addRoute(3, 250); // London to Athens
+			cities[23].addRoute(3, 247.5); // London to Athens
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (28 < maxCities)) {
-			cities[3].addRoute(28, 100); // Athens to Milan
+			cities[3].addRoute(28, 99); // Athens to Milan
 			routeCounter++;
-			cities[28].addRoute(3, 100); // Milan to Athens
+			cities[28].addRoute(3, 99); // Milan to Athens
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (29 < maxCities)) {
-			cities[3].addRoute(29, 300); // Athens to Moscow
+			cities[3].addRoute(29, 297); // Athens to Moscow
 			routeCounter++;
-			cities[29].addRoute(3, 300); // Moscow to Athens
+			cities[29].addRoute(3, 297); // Moscow to Athens
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (32 < maxCities)) {
-			cities[3].addRoute(32, 1100); // Athens to New York
+			cities[3].addRoute(32, 1089); // Athens to New York
 			routeCounter++;
-			cities[32].addRoute(3, 1100); // New York to Athens
+			cities[32].addRoute(3, 1089); // New York to Athens
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (35 < maxCities)) {
-			cities[3].addRoute(35, 200); // Athens to Paris
+			cities[3].addRoute(35, 198); // Athens to Paris
 			routeCounter++;
-			cities[35].addRoute(3, 200); // Paris to Athens
+			cities[35].addRoute(3, 198); // Paris to Athens
 			routeCounter++;
 		}
 		if ((3 < maxCities) && (49 < maxCities)) {
-			cities[3].addRoute(49, 140); // Athens to Vienna
+			cities[3].addRoute(49, 138.6); // Athens to Vienna
 			routeCounter++;
-			cities[49].addRoute(3, 140); // Vienna to Athens
+			cities[49].addRoute(3, 138.6); // Vienna to Athens
 			routeCounter++;
 		}
 		if ((4 < maxCities) && (5 < maxCities)) {
@@ -806,9 +940,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((4 < maxCities) && (19 < maxCities)) {
-			cities[4].addRoute(19, 350); // Beijing to Jakarta
+			cities[4].addRoute(19, 346.5); // Beijing to Jakarta
 			routeCounter++;
-			cities[19].addRoute(4, 350); // Jakarta to Beijing
+			cities[19].addRoute(4, 346.5); // Jakarta to Beijing
 			routeCounter++;
 		}
 		if ((4 < maxCities) && (22 < maxCities)) {
@@ -830,9 +964,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((4 < maxCities) && (25 < maxCities)) {
-			cities[4].addRoute(25, 200); // Beijing to Manila
+			cities[4].addRoute(25, 198); // Beijing to Manila
 			routeCounter++;
-			cities[25].addRoute(4, 200); // Manila to Beijing
+			cities[25].addRoute(4, 198); // Manila to Beijing
 			routeCounter++;
 		}
 		if ((4 < maxCities) && (26 < maxCities)) {
@@ -878,9 +1012,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((4 < maxCities) && (35 < maxCities)) {
-			cities[4].addRoute(35, 1100); // Beijing to Paris
+			cities[4].addRoute(35, 1089); // Beijing to Paris
 			routeCounter++;
-			cities[35].addRoute(4, 1100); // Paris to Beijing
+			cities[35].addRoute(4, 1089); // Paris to Beijing
 			routeCounter++;
 		}
 		if ((4 < maxCities) && (38 < maxCities)) {
@@ -920,9 +1054,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((4 < maxCities) && (47 < maxCities)) {
-			cities[4].addRoute(47, 900); // Beijing to Vancouver
+			cities[4].addRoute(47, 891); // Beijing to Vancouver
 			routeCounter++;
-			cities[47].addRoute(4, 900); // Vancouver to Beijing
+			cities[47].addRoute(4, 891); // Vancouver to Beijing
 			routeCounter++;
 		}
 		if ((4 < maxCities) && (50 < maxCities)) {
@@ -974,9 +1108,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((5 < maxCities) && (31 < maxCities)) {
-			cities[5].addRoute(31, 800); // Berlin to Nairobi
+			cities[5].addRoute(31, 792); // Berlin to Nairobi
 			routeCounter++;
-			cities[31].addRoute(5, 800); // Nairobi to Berlin
+			cities[31].addRoute(5, 792); // Nairobi to Berlin
 			routeCounter++;
 		}
 		if ((5 < maxCities) && (32 < maxCities)) {
@@ -992,9 +1126,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((5 < maxCities) && (35 < maxCities)) {
-			cities[5].addRoute(35, 150); // Berlin to Paris
+			cities[5].addRoute(35, 148.5); // Berlin to Paris
 			routeCounter++;
-			cities[35].addRoute(5, 150); // Paris to Berlin
+			cities[35].addRoute(5, 148.5); // Paris to Berlin
 			routeCounter++;
 		}
 		if ((5 < maxCities) && (38 < maxCities)) {
@@ -1022,57 +1156,57 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (13 < maxCities)) {
-			cities[6].addRoute(13, 1500); // Buenos Aires to Frankfurt
+			cities[6].addRoute(13, 1485); // Buenos Aires to Frankfurt
 			routeCounter++;
-			cities[13].addRoute(6, 1500); // Frankfurt to Buenos Aires
+			cities[13].addRoute(6, 1485); // Frankfurt to Buenos Aires
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (14 < maxCities)) {
-			cities[6].addRoute(14, 1400); // Buenos Aires to Geneva
+			cities[6].addRoute(14, 1386); // Buenos Aires to Geneva
 			routeCounter++;
-			cities[14].addRoute(6, 1400); // Geneva to Buenos Aires
+			cities[14].addRoute(6, 1386); // Geneva to Buenos Aires
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (17 < maxCities)) {
-			cities[6].addRoute(17, 1200); // Buenos Aires to Honolulu
+			cities[6].addRoute(17, 1188); // Buenos Aires to Honolulu
 			routeCounter++;
-			cities[17].addRoute(6, 1200); // Honolulu to Buenos Aires
+			cities[17].addRoute(6, 1188); // Honolulu to Buenos Aires
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (21 < maxCities)) {
-			cities[6].addRoute(21, 1000); // Buenos Aires to Johannesburg
+			cities[6].addRoute(21, 990); // Buenos Aires to Johannesburg
 			routeCounter++;
-			cities[21].addRoute(6, 1000); // Johannesburg to Buenos Aires
+			cities[21].addRoute(6, 990); // Johannesburg to Buenos Aires
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (23 < maxCities)) {
-			cities[6].addRoute(23, 1450); // Buenos Aires to London
+			cities[6].addRoute(23, 1435.5); // Buenos Aires to London
 			routeCounter++;
-			cities[23].addRoute(6, 1450); // London to Buenos Aires
+			cities[23].addRoute(6, 1435.5); // London to Buenos Aires
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (24 < maxCities)) {
-			cities[6].addRoute(24, 1000); // Buenos Aires to Los Angeles
+			cities[6].addRoute(24, 990); // Buenos Aires to Los Angeles
 			routeCounter++;
-			cities[24].addRoute(6, 1000); // Los Angeles to Buenos Aires
+			cities[24].addRoute(6, 990); // Los Angeles to Buenos Aires
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (27 < maxCities)) {
-			cities[6].addRoute(27, 1000); // Buenos Aires to Mexico City
+			cities[6].addRoute(27, 990); // Buenos Aires to Mexico City
 			routeCounter++;
-			cities[27].addRoute(6, 1000); // Mexico City to Buenos Aires
+			cities[27].addRoute(6, 990); // Mexico City to Buenos Aires
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (32 < maxCities)) {
-			cities[6].addRoute(32, 1400); // Buenos Aires to New York
+			cities[6].addRoute(32, 1386); // Buenos Aires to New York
 			routeCounter++;
-			cities[32].addRoute(6, 1400); // New York to Buenos Aires
+			cities[32].addRoute(6, 1386); // New York to Buenos Aires
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (35 < maxCities)) {
-			cities[6].addRoute(35, 1400); // Buenos Aires to Paris
+			cities[6].addRoute(35, 1386); // Buenos Aires to Paris
 			routeCounter++;
-			cities[35].addRoute(6, 1400); // Paris to Buenos Aires
+			cities[35].addRoute(6, 1386); // Paris to Buenos Aires
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (37 < maxCities)) {
@@ -1082,15 +1216,15 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (38 < maxCities)) {
-			cities[6].addRoute(38, 1450); // Buenos Aires to Rome
+			cities[6].addRoute(38, 1435.5); // Buenos Aires to Rome
 			routeCounter++;
-			cities[38].addRoute(6, 1450); // Rome to Buenos Aires
+			cities[38].addRoute(6, 1435.5); // Rome to Buenos Aires
 			routeCounter++;
 		}
 		if ((6 < maxCities) && (39 < maxCities)) {
-			cities[6].addRoute(39, 450); // Buenos Aires to Santiago
+			cities[6].addRoute(39, 445.5); // Buenos Aires to Santiago
 			routeCounter++;
-			cities[39].addRoute(6, 450); // Santiago to Buenos Aires
+			cities[39].addRoute(6, 445.5); // Santiago to Buenos Aires
 			routeCounter++;
 		}
 		if ((7 < maxCities) && (11 < maxCities)) {
@@ -1238,81 +1372,81 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((10 < maxCities) && (19 < maxCities)) {
-			cities[10].addRoute(19, 200); // Denpasar to Jakarta
+			cities[10].addRoute(19, 198); // Denpasar to Jakarta
 			routeCounter++;
-			cities[19].addRoute(10, 200); // Jakarta to Denpasar
+			cities[19].addRoute(10, 198); // Jakarta to Denpasar
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (13 < maxCities)) {
-			cities[11].addRoute(13, 900); // Dubai to Frankfurt
+			cities[11].addRoute(13, 891); // Dubai to Frankfurt
 			routeCounter++;
-			cities[13].addRoute(11, 900); // Frankfurt to Dubai
+			cities[13].addRoute(11, 891); // Frankfurt to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (14 < maxCities)) {
-			cities[11].addRoute(14, 800); // Dubai to Geneva
+			cities[11].addRoute(14, 792); // Dubai to Geneva
 			routeCounter++;
-			cities[14].addRoute(11, 800); // Geneva to Dubai
+			cities[14].addRoute(11, 792); // Geneva to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (16 < maxCities)) {
-			cities[11].addRoute(16, 1000); // Dubai to Hong Kong
+			cities[11].addRoute(16, 990); // Dubai to Hong Kong
 			routeCounter++;
-			cities[16].addRoute(11, 1000); // Hong Kong to Dubai
+			cities[16].addRoute(11, 990); // Hong Kong to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (18 < maxCities)) {
-			cities[11].addRoute(18, 250); // Dubai to Istanbul
+			cities[11].addRoute(18, 247.5); // Dubai to Istanbul
 			routeCounter++;
-			cities[18].addRoute(11, 250); // Istanbul to Dubai
+			cities[18].addRoute(11, 247.5); // Istanbul to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (19 < maxCities)) {
-			cities[11].addRoute(19, 1000); // Dubai to Jakarta
+			cities[11].addRoute(19, 990); // Dubai to Jakarta
 			routeCounter++;
-			cities[19].addRoute(11, 1000); // Jakarta to Dubai
+			cities[19].addRoute(11, 990); // Jakarta to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (21 < maxCities)) {
-			cities[11].addRoute(21, 1200); // Dubai to Johannesburg
+			cities[11].addRoute(21, 1188); // Dubai to Johannesburg
 			routeCounter++;
-			cities[21].addRoute(11, 1200); // Johannesburg to Dubai
+			cities[21].addRoute(11, 1188); // Johannesburg to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (22 < maxCities)) {
-			cities[11].addRoute(22, 900); // Dubai to Kolkata
+			cities[11].addRoute(22, 891); // Dubai to Kolkata
 			routeCounter++;
-			cities[22].addRoute(11, 900); // Kolkata to Dubai
+			cities[22].addRoute(11, 891); // Kolkata to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (23 < maxCities)) {
-			cities[11].addRoute(23, 950); // Dubai to London
+			cities[11].addRoute(23, 940.5); // Dubai to London
 			routeCounter++;
-			cities[23].addRoute(11, 950); // London to Dubai
+			cities[23].addRoute(11, 940.5); // London to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (24 < maxCities)) {
-			cities[11].addRoute(24, 1600); // Dubai to Los Angeles
+			cities[11].addRoute(24, 1584); // Dubai to Los Angeles
 			routeCounter++;
-			cities[24].addRoute(11, 1600); // Los Angeles to Dubai
+			cities[24].addRoute(11, 1584); // Los Angeles to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (26 < maxCities)) {
-			cities[11].addRoute(26, 1300); // Dubai to Melbourne
+			cities[11].addRoute(26, 1287); // Dubai to Melbourne
 			routeCounter++;
-			cities[26].addRoute(11, 1300); // Melbourne to Dubai
+			cities[26].addRoute(11, 1287); // Melbourne to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (28 < maxCities)) {
-			cities[11].addRoute(28, 800); // Dubai to Milan
+			cities[11].addRoute(28, 792); // Dubai to Milan
 			routeCounter++;
-			cities[28].addRoute(11, 800); // Milan to Dubai
+			cities[28].addRoute(11, 792); // Milan to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (29 < maxCities)) {
-			cities[11].addRoute(29, 800); // Dubai to Moscow
+			cities[11].addRoute(29, 792); // Dubai to Moscow
 			routeCounter++;
-			cities[29].addRoute(11, 800); // Moscow to Dubai
+			cities[29].addRoute(11, 792); // Moscow to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (30 < maxCities)) {
@@ -1322,51 +1456,51 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (31 < maxCities)) {
-			cities[11].addRoute(31, 500); // Dubai to Nairobi
+			cities[11].addRoute(31, 495); // Dubai to Nairobi
 			routeCounter++;
-			cities[31].addRoute(11, 500); // Nairobi to Dubai
+			cities[31].addRoute(11, 495); // Nairobi to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (32 < maxCities)) {
-			cities[11].addRoute(32, 1400); // Dubai to New York
+			cities[11].addRoute(32, 1386); // Dubai to New York
 			routeCounter++;
-			cities[32].addRoute(11, 1400); // New York to Dubai
+			cities[32].addRoute(11, 1386); // New York to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (33 < maxCities)) {
-			cities[11].addRoute(33, 800); // Dubai to Nice
+			cities[11].addRoute(33, 792); // Dubai to Nice
 			routeCounter++;
-			cities[33].addRoute(11, 800); // Nice to Dubai
+			cities[33].addRoute(11, 792); // Nice to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (34 < maxCities)) {
-			cities[11].addRoute(34, 900); // Dubai to Oslo
+			cities[11].addRoute(34, 891); // Dubai to Oslo
 			routeCounter++;
-			cities[34].addRoute(11, 900); // Oslo to Dubai
+			cities[34].addRoute(11, 891); // Oslo to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (35 < maxCities)) {
-			cities[11].addRoute(35, 850); // Dubai to Paris
+			cities[11].addRoute(35, 841.5); // Dubai to Paris
 			routeCounter++;
-			cities[35].addRoute(11, 850); // Paris to Dubai
+			cities[35].addRoute(11, 841.5); // Paris to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (36 < maxCities)) {
-			cities[11].addRoute(36, 950); // Dubai to Perth
+			cities[11].addRoute(36, 940.5); // Dubai to Perth
 			routeCounter++;
-			cities[36].addRoute(11, 950); // Perth to Dubai
+			cities[36].addRoute(11, 940.5); // Perth to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (38 < maxCities)) {
-			cities[11].addRoute(38, 450); // Dubai to Rome
+			cities[11].addRoute(38, 445.5); // Dubai to Rome
 			routeCounter++;
-			cities[38].addRoute(11, 450); // Rome to Dubai
+			cities[38].addRoute(11, 445.5); // Rome to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (42 < maxCities)) {
-			cities[11].addRoute(42, 900); // Dubai to Singapore
+			cities[11].addRoute(42, 891); // Dubai to Singapore
 			routeCounter++;
-			cities[42].addRoute(11, 900); // Singapore to Dubai
+			cities[42].addRoute(11, 891); // Singapore to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (43 < maxCities)) {
@@ -1376,21 +1510,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (44 < maxCities)) {
-			cities[11].addRoute(44, 600); // Dubai to Tangiers
+			cities[11].addRoute(44, 594); // Dubai to Tangiers
 			routeCounter++;
-			cities[44].addRoute(11, 600); // Tangiers to Dubai
+			cities[44].addRoute(11, 594); // Tangiers to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (45 < maxCities)) {
-			cities[11].addRoute(45, 1300); // Dubai to Tokyo
+			cities[11].addRoute(45, 1287); // Dubai to Tokyo
 			routeCounter++;
-			cities[45].addRoute(11, 1300); // Tokyo to Dubai
+			cities[45].addRoute(11, 1287); // Tokyo to Dubai
 			routeCounter++;
 		}
 		if ((11 < maxCities) && (49 < maxCities)) {
-			cities[11].addRoute(49, 750); // Dubai to Vienna
+			cities[11].addRoute(49, 742.5); // Dubai to Vienna
 			routeCounter++;
-			cities[49].addRoute(11, 750); // Vienna to Dubai
+			cities[49].addRoute(11, 742.5); // Vienna to Dubai
 			routeCounter++;
 		}
 		if ((12 < maxCities) && (24 < maxCities)) {
@@ -1400,21 +1534,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((12 < maxCities) && (27 < maxCities)) {
-			cities[12].addRoute(27, 250); // El Paso to Mexico City
+			cities[12].addRoute(27, 247.5); // El Paso to Mexico City
 			routeCounter++;
-			cities[27].addRoute(12, 250); // Mexico City to El Paso
+			cities[27].addRoute(12, 247.5); // Mexico City to El Paso
 			routeCounter++;
 		}
 		if ((12 < maxCities) && (32 < maxCities)) {
-			cities[12].addRoute(32, 350); // El Paso to New York
+			cities[12].addRoute(32, 346.5); // El Paso to New York
 			routeCounter++;
-			cities[32].addRoute(12, 350); // New York to El Paso
+			cities[32].addRoute(12, 346.5); // New York to El Paso
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (14 < maxCities)) {
-			cities[13].addRoute(14, 200); // Frankfurt to Geneva
+			cities[13].addRoute(14, 198); // Frankfurt to Geneva
 			routeCounter++;
-			cities[14].addRoute(13, 200); // Geneva to Frankfurt
+			cities[14].addRoute(13, 198); // Geneva to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (15 < maxCities)) {
@@ -1424,9 +1558,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (16 < maxCities)) {
-			cities[13].addRoute(16, 1300); // Frankfurt to Hong Kong
+			cities[13].addRoute(16, 1287); // Frankfurt to Hong Kong
 			routeCounter++;
-			cities[16].addRoute(13, 1300); // Hong Kong to Frankfurt
+			cities[16].addRoute(13, 1287); // Hong Kong to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (18 < maxCities)) {
@@ -1436,57 +1570,57 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (19 < maxCities)) {
-			cities[13].addRoute(19, 1500); // Frankfurt to Jakarta
+			cities[13].addRoute(19, 1485); // Frankfurt to Jakarta
 			routeCounter++;
-			cities[19].addRoute(13, 1500); // Jakarta to Frankfurt
+			cities[19].addRoute(13, 1485); // Jakarta to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (20 < maxCities)) {
-			cities[13].addRoute(20, 300); // Frankfurt to Jerusalem
+			cities[13].addRoute(20, 297); // Frankfurt to Jerusalem
 			routeCounter++;
-			cities[20].addRoute(13, 300); // Jerusalem to Frankfurt
+			cities[20].addRoute(13, 297); // Jerusalem to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (21 < maxCities)) {
-			cities[13].addRoute(21, 950); // Frankfurt to Johannesburg
+			cities[13].addRoute(21, 940.5); // Frankfurt to Johannesburg
 			routeCounter++;
-			cities[21].addRoute(13, 950); // Johannesburg to Frankfurt
+			cities[21].addRoute(13, 940.5); // Johannesburg to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (22 < maxCities)) {
-			cities[13].addRoute(22, 1100); // Frankfurt to Kolkata
+			cities[13].addRoute(22, 1089); // Frankfurt to Kolkata
 			routeCounter++;
-			cities[22].addRoute(13, 1100); // Kolkata to Frankfurt
+			cities[22].addRoute(13, 1089); // Kolkata to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (23 < maxCities)) {
-			cities[13].addRoute(23, 200); // Frankfurt to London
+			cities[13].addRoute(23, 198); // Frankfurt to London
 			routeCounter++;
-			cities[23].addRoute(13, 200); // London to Frankfurt
+			cities[23].addRoute(13, 198); // London to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (24 < maxCities)) {
-			cities[13].addRoute(24, 900); // Frankfurt to Los Angeles
+			cities[13].addRoute(24, 891); // Frankfurt to Los Angeles
 			routeCounter++;
-			cities[24].addRoute(13, 900); // Los Angeles to Frankfurt
+			cities[24].addRoute(13, 891); // Los Angeles to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (25 < maxCities)) {
-			cities[13].addRoute(25, 1300); // Frankfurt to Manila
+			cities[13].addRoute(25, 1287); // Frankfurt to Manila
 			routeCounter++;
-			cities[25].addRoute(13, 1300); // Manila to Frankfurt
+			cities[25].addRoute(13, 1287); // Manila to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (27 < maxCities)) {
-			cities[13].addRoute(27, 1100); // Frankfurt to Mexico City
+			cities[13].addRoute(27, 1089); // Frankfurt to Mexico City
 			routeCounter++;
-			cities[27].addRoute(13, 1100); // Mexico City to Frankfurt
+			cities[27].addRoute(13, 1089); // Mexico City to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (28 < maxCities)) {
-			cities[13].addRoute(28, 250); // Frankfurt to Milan
+			cities[13].addRoute(28, 247.5); // Frankfurt to Milan
 			routeCounter++;
-			cities[28].addRoute(13, 250); // Milan to Frankfurt
+			cities[28].addRoute(13, 247.5); // Milan to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (30 < maxCities)) {
@@ -1496,21 +1630,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (31 < maxCities)) {
-			cities[13].addRoute(31, 800); // Frankfurt to Nairobi
+			cities[13].addRoute(31, 792); // Frankfurt to Nairobi
 			routeCounter++;
-			cities[31].addRoute(13, 800); // Nairobi to Frankfurt
+			cities[31].addRoute(13, 792); // Nairobi to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (32 < maxCities)) {
-			cities[13].addRoute(32, 600); // Frankfurt to New York
+			cities[13].addRoute(32, 594); // Frankfurt to New York
 			routeCounter++;
-			cities[32].addRoute(13, 600); // New York to Frankfurt
+			cities[32].addRoute(13, 594); // New York to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (33 < maxCities)) {
-			cities[13].addRoute(33, 200); // Frankfurt to Nice
+			cities[13].addRoute(33, 198); // Frankfurt to Nice
 			routeCounter++;
-			cities[33].addRoute(13, 200); // Nice to Frankfurt
+			cities[33].addRoute(13, 198); // Nice to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (34 < maxCities)) {
@@ -1520,9 +1654,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (35 < maxCities)) {
-			cities[13].addRoute(35, 150); // Frankfurt to Paris
+			cities[13].addRoute(35, 148.5); // Frankfurt to Paris
 			routeCounter++;
-			cities[35].addRoute(13, 150); // Paris to Frankfurt
+			cities[35].addRoute(13, 148.5); // Paris to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (37 < maxCities)) {
@@ -1532,57 +1666,57 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (38 < maxCities)) {
-			cities[13].addRoute(38, 250); // Frankfurt to Rome
+			cities[13].addRoute(38, 247.5); // Frankfurt to Rome
 			routeCounter++;
-			cities[38].addRoute(13, 250); // Rome to Frankfurt
+			cities[38].addRoute(13, 247.5); // Rome to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (40 < maxCities)) {
-			cities[13].addRoute(40, 1120); // Frankfurt to Seoul
+			cities[13].addRoute(40, 1108.8); // Frankfurt to Seoul
 			routeCounter++;
-			cities[40].addRoute(13, 1120); // Seoul to Frankfurt
+			cities[40].addRoute(13, 1108.8); // Seoul to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (41 < maxCities)) {
-			cities[13].addRoute(41, 1050); // Frankfurt to Shanghai
+			cities[13].addRoute(41, 1039.5); // Frankfurt to Shanghai
 			routeCounter++;
-			cities[41].addRoute(13, 1050); // Shanghai to Frankfurt
+			cities[41].addRoute(13, 1039.5); // Shanghai to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (42 < maxCities)) {
-			cities[13].addRoute(42, 1120); // Frankfurt to Singapore
+			cities[13].addRoute(42, 1108.8); // Frankfurt to Singapore
 			routeCounter++;
-			cities[42].addRoute(13, 1120); // Singapore to Frankfurt
+			cities[42].addRoute(13, 1108.8); // Singapore to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (44 < maxCities)) {
-			cities[13].addRoute(44, 300); // Frankfurt to Tangiers
+			cities[13].addRoute(44, 297); // Frankfurt to Tangiers
 			routeCounter++;
-			cities[44].addRoute(13, 300); // Tangiers to Frankfurt
+			cities[44].addRoute(13, 297); // Tangiers to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (45 < maxCities)) {
-			cities[13].addRoute(45, 1150); // Frankfurt to Tokyo
+			cities[13].addRoute(45, 1138.5); // Frankfurt to Tokyo
 			routeCounter++;
-			cities[45].addRoute(13, 1150); // Tokyo to Frankfurt
+			cities[45].addRoute(13, 1138.5); // Tokyo to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (47 < maxCities)) {
-			cities[13].addRoute(47, 850); // Frankfurt to Vancouver
+			cities[13].addRoute(47, 841.5); // Frankfurt to Vancouver
 			routeCounter++;
-			cities[47].addRoute(13, 850); // Vancouver to Frankfurt
+			cities[47].addRoute(13, 841.5); // Vancouver to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (48 < maxCities)) {
-			cities[13].addRoute(48, 250); // Frankfurt to Venice
+			cities[13].addRoute(48, 247.5); // Frankfurt to Venice
 			routeCounter++;
-			cities[48].addRoute(13, 250); // Venice to Frankfurt
+			cities[48].addRoute(13, 247.5); // Venice to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (49 < maxCities)) {
-			cities[13].addRoute(49, 200); // Frankfurt to Vienna
+			cities[13].addRoute(49, 198); // Frankfurt to Vienna
 			routeCounter++;
-			cities[49].addRoute(13, 200); // Vienna to Frankfurt
+			cities[49].addRoute(13, 198); // Vienna to Frankfurt
 			routeCounter++;
 		}
 		if ((13 < maxCities) && (50 < maxCities)) {
@@ -1628,9 +1762,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((14 < maxCities) && (35 < maxCities)) {
-			cities[14].addRoute(35, 100); // Geneva to Paris
+			cities[14].addRoute(35, 99); // Geneva to Paris
 			routeCounter++;
-			cities[35].addRoute(14, 100); // Paris to Geneva
+			cities[35].addRoute(14, 99); // Paris to Geneva
 			routeCounter++;
 		}
 		if ((14 < maxCities) && (37 < maxCities)) {
@@ -1652,57 +1786,57 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((15 < maxCities) && (16 < maxCities)) {
-			cities[15].addRoute(16, 50); // Guangdong to Hong Kong
+			cities[15].addRoute(16, 49.5); // Guangdong to Hong Kong
 			routeCounter++;
-			cities[16].addRoute(15, 50); // Hong Kong to Guangdong
+			cities[16].addRoute(15, 49.5); // Hong Kong to Guangdong
 			routeCounter++;
 		}
 		if ((15 < maxCities) && (19 < maxCities)) {
-			cities[15].addRoute(19, 250); // Guangdong to Jakarta
+			cities[15].addRoute(19, 247.5); // Guangdong to Jakarta
 			routeCounter++;
-			cities[19].addRoute(15, 250); // Jakarta to Guangdong
+			cities[19].addRoute(15, 247.5); // Jakarta to Guangdong
 			routeCounter++;
 		}
 		if ((15 < maxCities) && (22 < maxCities)) {
-			cities[15].addRoute(22, 250); // Guangdong to Kolkata
+			cities[15].addRoute(22, 247.5); // Guangdong to Kolkata
 			routeCounter++;
-			cities[22].addRoute(15, 250); // Kolkata to Guangdong
+			cities[22].addRoute(15, 247.5); // Kolkata to Guangdong
 			routeCounter++;
 		}
 		if ((15 < maxCities) && (23 < maxCities)) {
-			cities[15].addRoute(23, 800); // Guangdong to London
+			cities[15].addRoute(23, 792); // Guangdong to London
 			routeCounter++;
-			cities[23].addRoute(15, 800); // London to Guangdong
+			cities[23].addRoute(15, 792); // London to Guangdong
 			routeCounter++;
 		}
 		if ((15 < maxCities) && (25 < maxCities)) {
-			cities[15].addRoute(25, 400); // Guangdong to Manila
+			cities[15].addRoute(25, 396); // Guangdong to Manila
 			routeCounter++;
-			cities[25].addRoute(15, 400); // Manila to Guangdong
+			cities[25].addRoute(15, 396); // Manila to Guangdong
 			routeCounter++;
 		}
 		if ((15 < maxCities) && (26 < maxCities)) {
-			cities[15].addRoute(26, 800); // Guangdong to Melbourne
+			cities[15].addRoute(26, 792); // Guangdong to Melbourne
 			routeCounter++;
-			cities[26].addRoute(15, 800); // Melbourne to Guangdong
+			cities[26].addRoute(15, 792); // Melbourne to Guangdong
 			routeCounter++;
 		}
 		if ((15 < maxCities) && (35 < maxCities)) {
-			cities[15].addRoute(35, 800); // Guangdong to Paris
+			cities[15].addRoute(35, 792); // Guangdong to Paris
 			routeCounter++;
-			cities[35].addRoute(15, 800); // Paris to Guangdong
+			cities[35].addRoute(15, 792); // Paris to Guangdong
 			routeCounter++;
 		}
 		if ((15 < maxCities) && (36 < maxCities)) {
-			cities[15].addRoute(36, 700); // Guangdong to Perth
+			cities[15].addRoute(36, 693); // Guangdong to Perth
 			routeCounter++;
-			cities[36].addRoute(15, 700); // Perth to Guangdong
+			cities[36].addRoute(15, 693); // Perth to Guangdong
 			routeCounter++;
 		}
 		if ((15 < maxCities) && (42 < maxCities)) {
-			cities[15].addRoute(42, 300); // Guangdong to Singapore
+			cities[15].addRoute(42, 297); // Guangdong to Singapore
 			routeCounter++;
-			cities[42].addRoute(15, 300); // Singapore to Guangdong
+			cities[42].addRoute(15, 297); // Singapore to Guangdong
 			routeCounter++;
 		}
 		if ((15 < maxCities) && (43 < maxCities)) {
@@ -1730,9 +1864,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (19 < maxCities)) {
-			cities[16].addRoute(19, 200); // Hong Kong to Jakarta
+			cities[16].addRoute(19, 198); // Hong Kong to Jakarta
 			routeCounter++;
-			cities[19].addRoute(16, 200); // Jakarta to Hong Kong
+			cities[19].addRoute(16, 198); // Jakarta to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (22 < maxCities)) {
@@ -1748,27 +1882,27 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (25 < maxCities)) {
-			cities[16].addRoute(25, 250); // Hong Kong to Manila
+			cities[16].addRoute(25, 247.5); // Hong Kong to Manila
 			routeCounter++;
-			cities[25].addRoute(16, 250); // Manila to Hong Kong
+			cities[25].addRoute(16, 247.5); // Manila to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (26 < maxCities)) {
-			cities[16].addRoute(26, 820); // Hong Kong to Melbourne
+			cities[16].addRoute(26, 811.8); // Hong Kong to Melbourne
 			routeCounter++;
-			cities[26].addRoute(16, 820); // Melbourne to Hong Kong
+			cities[26].addRoute(16, 811.8); // Melbourne to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (35 < maxCities)) {
-			cities[16].addRoute(35, 820); // Hong Kong to Paris
+			cities[16].addRoute(35, 811.8); // Hong Kong to Paris
 			routeCounter++;
-			cities[35].addRoute(16, 820); // Paris to Hong Kong
+			cities[35].addRoute(16, 811.8); // Paris to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (36 < maxCities)) {
-			cities[16].addRoute(36, 720); // Hong Kong to Perth
+			cities[16].addRoute(36, 712.8); // Hong Kong to Perth
 			routeCounter++;
-			cities[36].addRoute(16, 720); // Perth to Hong Kong
+			cities[36].addRoute(16, 712.8); // Perth to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (38 < maxCities)) {
@@ -1778,21 +1912,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (40 < maxCities)) {
-			cities[16].addRoute(40, 400); // Hong Kong to Seoul
+			cities[16].addRoute(40, 396); // Hong Kong to Seoul
 			routeCounter++;
-			cities[40].addRoute(16, 400); // Seoul to Hong Kong
+			cities[40].addRoute(16, 396); // Seoul to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (41 < maxCities)) {
-			cities[16].addRoute(41, 150); // Hong Kong to Shanghai
+			cities[16].addRoute(41, 148.5); // Hong Kong to Shanghai
 			routeCounter++;
-			cities[41].addRoute(16, 150); // Shanghai to Hong Kong
+			cities[41].addRoute(16, 148.5); // Shanghai to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (42 < maxCities)) {
-			cities[16].addRoute(42, 360); // Hong Kong to Singapore
+			cities[16].addRoute(42, 356.4); // Hong Kong to Singapore
 			routeCounter++;
-			cities[42].addRoute(16, 360); // Singapore to Hong Kong
+			cities[42].addRoute(16, 356.4); // Singapore to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (43 < maxCities)) {
@@ -1808,21 +1942,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (46 < maxCities)) {
-			cities[16].addRoute(46, 670); // Hong Kong to Ulan Bataar
+			cities[16].addRoute(46, 663.3); // Hong Kong to Ulan Bataar
 			routeCounter++;
-			cities[46].addRoute(16, 670); // Ulan Bataar to Hong Kong
+			cities[46].addRoute(16, 663.3); // Ulan Bataar to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (47 < maxCities)) {
-			cities[16].addRoute(47, 1200); // Hong Kong to Vancouver
+			cities[16].addRoute(47, 1188); // Hong Kong to Vancouver
 			routeCounter++;
-			cities[47].addRoute(16, 1200); // Vancouver to Hong Kong
+			cities[47].addRoute(16, 1188); // Vancouver to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (49 < maxCities)) {
-			cities[16].addRoute(49, 1000); // Hong Kong to Vienna
+			cities[16].addRoute(49, 990); // Hong Kong to Vienna
 			routeCounter++;
-			cities[49].addRoute(16, 1000); // Vienna to Hong Kong
+			cities[49].addRoute(16, 990); // Vienna to Hong Kong
 			routeCounter++;
 		}
 		if ((16 < maxCities) && (50 < maxCities)) {
@@ -1838,21 +1972,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((17 < maxCities) && (27 < maxCities)) {
-			cities[17].addRoute(27, 650); // Honolulu to Mexico City
+			cities[17].addRoute(27, 643.5); // Honolulu to Mexico City
 			routeCounter++;
-			cities[27].addRoute(17, 650); // Mexico City to Honolulu
+			cities[27].addRoute(17, 643.5); // Mexico City to Honolulu
 			routeCounter++;
 		}
 		if ((17 < maxCities) && (32 < maxCities)) {
-			cities[17].addRoute(32, 1000); // Honolulu to New York
+			cities[17].addRoute(32, 990); // Honolulu to New York
 			routeCounter++;
-			cities[32].addRoute(17, 1000); // New York to Honolulu
+			cities[32].addRoute(17, 990); // New York to Honolulu
 			routeCounter++;
 		}
 		if ((17 < maxCities) && (40 < maxCities)) {
-			cities[17].addRoute(40, 800); // Honolulu to Seoul
+			cities[17].addRoute(40, 792); // Honolulu to Seoul
 			routeCounter++;
-			cities[40].addRoute(17, 800); // Seoul to Honolulu
+			cities[40].addRoute(17, 792); // Seoul to Honolulu
 			routeCounter++;
 		}
 		if ((17 < maxCities) && (43 < maxCities)) {
@@ -1868,21 +2002,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((17 < maxCities) && (47 < maxCities)) {
-			cities[17].addRoute(47, 850); // Honolulu to Vancouver
+			cities[17].addRoute(47, 841.5); // Honolulu to Vancouver
 			routeCounter++;
-			cities[47].addRoute(17, 850); // Vancouver to Honolulu
+			cities[47].addRoute(17, 841.5); // Vancouver to Honolulu
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (23 < maxCities)) {
-			cities[18].addRoute(23, 450); // Istanbul to London
+			cities[18].addRoute(23, 445.5); // Istanbul to London
 			routeCounter++;
-			cities[23].addRoute(18, 450); // London to Istanbul
+			cities[23].addRoute(18, 445.5); // London to Istanbul
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (28 < maxCities)) {
-			cities[18].addRoute(28, 300); // Istanbul to Milan
+			cities[18].addRoute(28, 297); // Istanbul to Milan
 			routeCounter++;
-			cities[28].addRoute(18, 300); // Milan to Istanbul
+			cities[28].addRoute(18, 297); // Milan to Istanbul
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (30 < maxCities)) {
@@ -1892,9 +2026,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (32 < maxCities)) {
-			cities[18].addRoute(32, 980); // Istanbul to New York
+			cities[18].addRoute(32, 970.2); // Istanbul to New York
 			routeCounter++;
-			cities[32].addRoute(18, 980); // New York to Istanbul
+			cities[32].addRoute(18, 970.2); // New York to Istanbul
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (34 < maxCities)) {
@@ -1904,33 +2038,33 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (35 < maxCities)) {
-			cities[18].addRoute(35, 350); // Istanbul to Paris
+			cities[18].addRoute(35, 346.5); // Istanbul to Paris
 			routeCounter++;
-			cities[35].addRoute(18, 350); // Paris to Istanbul
+			cities[35].addRoute(18, 346.5); // Paris to Istanbul
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (38 < maxCities)) {
-			cities[18].addRoute(38, 280); // Istanbul to Rome
+			cities[18].addRoute(38, 277.2); // Istanbul to Rome
 			routeCounter++;
-			cities[38].addRoute(18, 280); // Rome to Istanbul
+			cities[38].addRoute(18, 277.2); // Rome to Istanbul
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (42 < maxCities)) {
-			cities[18].addRoute(42, 770); // Istanbul to Singapore
+			cities[18].addRoute(42, 762.3); // Istanbul to Singapore
 			routeCounter++;
-			cities[42].addRoute(18, 770); // Singapore to Istanbul
+			cities[42].addRoute(18, 762.3); // Singapore to Istanbul
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (44 < maxCities)) {
-			cities[18].addRoute(44, 470); // Istanbul to Tangiers
+			cities[18].addRoute(44, 465.3); // Istanbul to Tangiers
 			routeCounter++;
-			cities[44].addRoute(18, 470); // Tangiers to Istanbul
+			cities[44].addRoute(18, 465.3); // Tangiers to Istanbul
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (49 < maxCities)) {
-			cities[18].addRoute(49, 250); // Istanbul to Vienna
+			cities[18].addRoute(49, 247.5); // Istanbul to Vienna
 			routeCounter++;
-			cities[49].addRoute(18, 250); // Vienna to Istanbul
+			cities[49].addRoute(18, 247.5); // Vienna to Istanbul
 			routeCounter++;
 		}
 		if ((18 < maxCities) && (50 < maxCities)) {
@@ -2000,9 +2134,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((20 < maxCities) && (31 < maxCities)) {
-			cities[20].addRoute(31, 450); // Jerusalem to Nairobi
+			cities[20].addRoute(31, 445.5); // Jerusalem to Nairobi
 			routeCounter++;
-			cities[31].addRoute(20, 450); // Nairobi to Jerusalem
+			cities[31].addRoute(20, 445.5); // Nairobi to Jerusalem
 			routeCounter++;
 		}
 		if ((20 < maxCities) && (32 < maxCities)) {
@@ -2024,9 +2158,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((20 < maxCities) && (35 < maxCities)) {
-			cities[20].addRoute(35, 500); // Jerusalem to Paris
+			cities[20].addRoute(35, 495); // Jerusalem to Paris
 			routeCounter++;
-			cities[35].addRoute(20, 500); // Paris to Jerusalem
+			cities[35].addRoute(20, 495); // Paris to Jerusalem
 			routeCounter++;
 		}
 		if ((20 < maxCities) && (38 < maxCities)) {
@@ -2054,27 +2188,27 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((21 < maxCities) && (31 < maxCities)) {
-			cities[21].addRoute(31, 560); // Johannesburg to Nairobi
+			cities[21].addRoute(31, 554.4); // Johannesburg to Nairobi
 			routeCounter++;
-			cities[31].addRoute(21, 560); // Nairobi to Johannesburg
+			cities[31].addRoute(21, 554.4); // Nairobi to Johannesburg
 			routeCounter++;
 		}
 		if ((21 < maxCities) && (35 < maxCities)) {
-			cities[21].addRoute(35, 990); // Johannesburg to Paris
+			cities[21].addRoute(35, 980.1); // Johannesburg to Paris
 			routeCounter++;
-			cities[35].addRoute(21, 990); // Paris to Johannesburg
+			cities[35].addRoute(21, 980.1); // Paris to Johannesburg
 			routeCounter++;
 		}
 		if ((21 < maxCities) && (36 < maxCities)) {
-			cities[21].addRoute(36, 990); // Johannesburg to Perth
+			cities[21].addRoute(36, 980.1); // Johannesburg to Perth
 			routeCounter++;
-			cities[36].addRoute(21, 990); // Perth to Johannesburg
+			cities[36].addRoute(21, 980.1); // Perth to Johannesburg
 			routeCounter++;
 		}
 		if ((21 < maxCities) && (42 < maxCities)) {
-			cities[21].addRoute(42, 1200); // Johannesburg to Singapore
+			cities[21].addRoute(42, 1188); // Johannesburg to Singapore
 			routeCounter++;
-			cities[42].addRoute(21, 1200); // Singapore to Johannesburg
+			cities[42].addRoute(21, 1188); // Singapore to Johannesburg
 			routeCounter++;
 		}
 		if ((21 < maxCities) && (43 < maxCities)) {
@@ -2096,9 +2230,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((22 < maxCities) && (25 < maxCities)) {
-			cities[22].addRoute(25, 600); // Kolkata to Manila
+			cities[22].addRoute(25, 594); // Kolkata to Manila
 			routeCounter++;
-			cities[25].addRoute(22, 600); // Manila to Kolkata
+			cities[25].addRoute(22, 594); // Manila to Kolkata
 			routeCounter++;
 		}
 		if ((22 < maxCities) && (30 < maxCities)) {
@@ -2108,21 +2242,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((22 < maxCities) && (31 < maxCities)) {
-			cities[22].addRoute(31, 550); // Kolkata to Nairobi
+			cities[22].addRoute(31, 544.5); // Kolkata to Nairobi
 			routeCounter++;
-			cities[31].addRoute(22, 550); // Nairobi to Kolkata
+			cities[31].addRoute(22, 544.5); // Nairobi to Kolkata
 			routeCounter++;
 		}
 		if ((22 < maxCities) && (35 < maxCities)) {
-			cities[22].addRoute(35, 950); // Kolkata to Paris
+			cities[22].addRoute(35, 940.5); // Kolkata to Paris
 			routeCounter++;
-			cities[35].addRoute(22, 950); // Paris to Kolkata
+			cities[35].addRoute(22, 940.5); // Paris to Kolkata
 			routeCounter++;
 		}
 		if ((22 < maxCities) && (42 < maxCities)) {
-			cities[22].addRoute(42, 350); // Kolkata to Singapore
+			cities[22].addRoute(42, 346.5); // Kolkata to Singapore
 			routeCounter++;
-			cities[42].addRoute(22, 350); // Singapore to Kolkata
+			cities[42].addRoute(22, 346.5); // Singapore to Kolkata
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (24 < maxCities)) {
@@ -2132,21 +2266,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (25 < maxCities)) {
-			cities[23].addRoute(25, 1200); // London to Manila
+			cities[23].addRoute(25, 1188); // London to Manila
 			routeCounter++;
-			cities[25].addRoute(23, 1200); // Manila to London
+			cities[25].addRoute(23, 1188); // Manila to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (27 < maxCities)) {
-			cities[23].addRoute(27, 900); // London to Mexico City
+			cities[23].addRoute(27, 891); // London to Mexico City
 			routeCounter++;
-			cities[27].addRoute(23, 900); // Mexico City to London
+			cities[27].addRoute(23, 891); // Mexico City to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (28 < maxCities)) {
-			cities[23].addRoute(28, 300); // London to Milan
+			cities[23].addRoute(28, 297); // London to Milan
 			routeCounter++;
-			cities[28].addRoute(23, 300); // Milan to London
+			cities[28].addRoute(23, 297); // Milan to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (30 < maxCities)) {
@@ -2156,21 +2290,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (31 < maxCities)) {
-			cities[23].addRoute(31, 650); // London to Nairobi
+			cities[23].addRoute(31, 643.5); // London to Nairobi
 			routeCounter++;
-			cities[31].addRoute(23, 650); // Nairobi to London
+			cities[31].addRoute(23, 643.5); // Nairobi to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (32 < maxCities)) {
-			cities[23].addRoute(32, 600); // London to New York
+			cities[23].addRoute(32, 594); // London to New York
 			routeCounter++;
-			cities[32].addRoute(23, 600); // New York to London
+			cities[32].addRoute(23, 594); // New York to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (33 < maxCities)) {
-			cities[23].addRoute(33, 250); // London to Nice
+			cities[23].addRoute(33, 247.5); // London to Nice
 			routeCounter++;
-			cities[33].addRoute(23, 250); // Nice to London
+			cities[33].addRoute(23, 247.5); // Nice to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (34 < maxCities)) {
@@ -2180,9 +2314,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (35 < maxCities)) {
-			cities[23].addRoute(35, 150); // London to Paris
+			cities[23].addRoute(35, 148.5); // London to Paris
 			routeCounter++;
-			cities[35].addRoute(23, 150); // Paris to London
+			cities[35].addRoute(23, 148.5); // Paris to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (37 < maxCities)) {
@@ -2198,33 +2332,33 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (39 < maxCities)) {
-			cities[23].addRoute(39, 1150); // London to Santiago
+			cities[23].addRoute(39, 1138.5); // London to Santiago
 			routeCounter++;
-			cities[39].addRoute(23, 1150); // Santiago to London
+			cities[39].addRoute(23, 1138.5); // Santiago to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (40 < maxCities)) {
-			cities[23].addRoute(40, 1000); // London to Seoul
+			cities[23].addRoute(40, 990); // London to Seoul
 			routeCounter++;
-			cities[40].addRoute(23, 1000); // Seoul to London
+			cities[40].addRoute(23, 990); // Seoul to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (41 < maxCities)) {
-			cities[23].addRoute(41, 990); // London to Shanghai
+			cities[23].addRoute(41, 980.1); // London to Shanghai
 			routeCounter++;
-			cities[41].addRoute(23, 990); // Shanghai to London
+			cities[41].addRoute(23, 980.1); // Shanghai to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (42 < maxCities)) {
-			cities[23].addRoute(42, 1100); // London to Singapore
+			cities[23].addRoute(42, 1089); // London to Singapore
 			routeCounter++;
-			cities[42].addRoute(23, 1100); // Singapore to London
+			cities[42].addRoute(23, 1089); // Singapore to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (44 < maxCities)) {
-			cities[23].addRoute(44, 450); // London to Tangiers
+			cities[23].addRoute(44, 445.5); // London to Tangiers
 			routeCounter++;
-			cities[44].addRoute(23, 450); // Tangiers to London
+			cities[44].addRoute(23, 445.5); // Tangiers to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (45 < maxCities)) {
@@ -2234,21 +2368,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (47 < maxCities)) {
-			cities[23].addRoute(47, 950); // London to Vancouver
+			cities[23].addRoute(47, 940.5); // London to Vancouver
 			routeCounter++;
-			cities[47].addRoute(23, 950); // Vancouver to London
+			cities[47].addRoute(23, 940.5); // Vancouver to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (48 < maxCities)) {
-			cities[23].addRoute(48, 400); // London to Venice
+			cities[23].addRoute(48, 396); // London to Venice
 			routeCounter++;
-			cities[48].addRoute(23, 400); // Venice to London
+			cities[48].addRoute(23, 396); // Venice to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (49 < maxCities)) {
-			cities[23].addRoute(49, 320); // London to Vienna
+			cities[23].addRoute(49, 316.8); // London to Vienna
 			routeCounter++;
-			cities[49].addRoute(23, 320); // Vienna to London
+			cities[49].addRoute(23, 316.8); // Vienna to London
 			routeCounter++;
 		}
 		if ((23 < maxCities) && (50 < maxCities)) {
@@ -2258,21 +2392,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((24 < maxCities) && (25 < maxCities)) {
-			cities[24].addRoute(25, 800); // Los Angeles to Manila
+			cities[24].addRoute(25, 792); // Los Angeles to Manila
 			routeCounter++;
-			cities[25].addRoute(24, 800); // Manila to Los Angeles
+			cities[25].addRoute(24, 792); // Manila to Los Angeles
 			routeCounter++;
 		}
 		if ((24 < maxCities) && (27 < maxCities)) {
-			cities[24].addRoute(27, 300); // Los Angeles to Mexico City
+			cities[24].addRoute(27, 297); // Los Angeles to Mexico City
 			routeCounter++;
-			cities[27].addRoute(24, 300); // Mexico City to Los Angeles
+			cities[27].addRoute(24, 297); // Mexico City to Los Angeles
 			routeCounter++;
 		}
 		if ((24 < maxCities) && (32 < maxCities)) {
-			cities[24].addRoute(32, 350); // Los Angeles to New York
+			cities[24].addRoute(32, 346.5); // Los Angeles to New York
 			routeCounter++;
-			cities[32].addRoute(24, 350); // New York to Los Angeles
+			cities[32].addRoute(24, 346.5); // New York to Los Angeles
 			routeCounter++;
 		}
 		if ((24 < maxCities) && (34 < maxCities)) {
@@ -2282,15 +2416,15 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((24 < maxCities) && (40 < maxCities)) {
-			cities[24].addRoute(40, 900); // Los Angeles to Seoul
+			cities[24].addRoute(40, 891); // Los Angeles to Seoul
 			routeCounter++;
-			cities[40].addRoute(24, 900); // Seoul to Los Angeles
+			cities[40].addRoute(24, 891); // Seoul to Los Angeles
 			routeCounter++;
 		}
 		if ((24 < maxCities) && (42 < maxCities)) {
-			cities[24].addRoute(42, 1300); // Los Angeles to Singapore
+			cities[24].addRoute(42, 1287); // Los Angeles to Singapore
 			routeCounter++;
-			cities[42].addRoute(24, 1300); // Singapore to Los Angeles
+			cities[42].addRoute(24, 1287); // Singapore to Los Angeles
 			routeCounter++;
 		}
 		if ((24 < maxCities) && (43 < maxCities)) {
@@ -2354,15 +2488,15 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((27 < maxCities) && (39 < maxCities)) {
-			cities[27].addRoute(39, 650); // Mexico City to Santiago
+			cities[27].addRoute(39, 643.5); // Mexico City to Santiago
 			routeCounter++;
-			cities[39].addRoute(27, 650); // Santiago to Mexico City
+			cities[39].addRoute(27, 643.5); // Santiago to Mexico City
 			routeCounter++;
 		}
 		if ((27 < maxCities) && (47 < maxCities)) {
-			cities[27].addRoute(47, 950); // Mexico City to Vancouver
+			cities[27].addRoute(47, 940.5); // Mexico City to Vancouver
 			routeCounter++;
-			cities[47].addRoute(27, 950); // Vancouver to Mexico City
+			cities[47].addRoute(27, 940.5); // Vancouver to Mexico City
 			routeCounter++;
 		}
 		if ((27 < maxCities) && (50 < maxCities)) {
@@ -2372,9 +2506,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((28 < maxCities) && (32 < maxCities)) {
-			cities[28].addRoute(32, 950); // Milan to New York
+			cities[28].addRoute(32, 940.5); // Milan to New York
 			routeCounter++;
-			cities[32].addRoute(28, 950); // New York to Milan
+			cities[32].addRoute(28, 940.5); // New York to Milan
 			routeCounter++;
 		}
 		if ((28 < maxCities) && (33 < maxCities)) {
@@ -2390,9 +2524,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((28 < maxCities) && (48 < maxCities)) {
-			cities[28].addRoute(48, 70); // Milan to Venice
+			cities[28].addRoute(48, 69.3); // Milan to Venice
 			routeCounter++;
-			cities[48].addRoute(28, 70); // Venice to Milan
+			cities[48].addRoute(28, 69.3); // Venice to Milan
 			routeCounter++;
 		}
 		if ((28 < maxCities) && (50 < maxCities)) {
@@ -2402,21 +2536,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((29 < maxCities) && (5 < maxCities)) {
-			cities[29].addRoute(5, 450); // Moscow to Berlin
+			cities[29].addRoute(5, 445.5); // Moscow to Berlin
 			routeCounter++;
-			cities[5].addRoute(29, 450); // Berlin to Moscow
+			cities[5].addRoute(29, 445.5); // Berlin to Moscow
 			routeCounter++;
 		}
 		if ((30 < maxCities) && (31 < maxCities)) {
-			cities[30].addRoute(31, 550); // Mumbai to Nairobi
+			cities[30].addRoute(31, 544.5); // Mumbai to Nairobi
 			routeCounter++;
-			cities[31].addRoute(30, 550); // Nairobi to Mumbai
+			cities[31].addRoute(30, 544.5); // Nairobi to Mumbai
 			routeCounter++;
 		}
 		if ((30 < maxCities) && (41 < maxCities)) {
-			cities[30].addRoute(41, 580); // Mumbai to Shanghai
+			cities[30].addRoute(41, 574.2); // Mumbai to Shanghai
 			routeCounter++;
-			cities[41].addRoute(30, 580); // Shanghai to Mumbai
+			cities[41].addRoute(30, 574.2); // Shanghai to Mumbai
 			routeCounter++;
 		}
 		if ((30 < maxCities) && (43 < maxCities)) {
@@ -2450,9 +2584,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((32 < maxCities) && (35 < maxCities)) {
-			cities[32].addRoute(35, 650); // New York to Paris
+			cities[32].addRoute(35, 643.5); // New York to Paris
 			routeCounter++;
-			cities[35].addRoute(32, 650); // Paris to New York
+			cities[35].addRoute(32, 643.5); // Paris to New York
 			routeCounter++;
 		}
 		if ((32 < maxCities) && (38 < maxCities)) {
@@ -2474,9 +2608,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((32 < maxCities) && (47 < maxCities)) {
-			cities[32].addRoute(47, 450); // New York to Vancouver
+			cities[32].addRoute(47, 445.5); // New York to Vancouver
 			routeCounter++;
-			cities[47].addRoute(32, 450); // Vancouver to New York
+			cities[47].addRoute(32, 445.5); // Vancouver to New York
 			routeCounter++;
 		}
 		if ((32 < maxCities) && (48 < maxCities)) {
@@ -2498,33 +2632,33 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((33 < maxCities) && (35 < maxCities)) {
-			cities[33].addRoute(35, 100); // Nice to Paris
+			cities[33].addRoute(35, 99); // Nice to Paris
 			routeCounter++;
-			cities[35].addRoute(33, 100); // Paris to Nice
+			cities[35].addRoute(33, 99); // Paris to Nice
 			routeCounter++;
 		}
 		if ((34 < maxCities) && (35 < maxCities)) {
-			cities[34].addRoute(35, 250); // Oslo to Paris
+			cities[34].addRoute(35, 247.5); // Oslo to Paris
 			routeCounter++;
-			cities[35].addRoute(34, 250); // Paris to Oslo
+			cities[35].addRoute(34, 247.5); // Paris to Oslo
 			routeCounter++;
 		}
 		if ((34 < maxCities) && (38 < maxCities)) {
-			cities[34].addRoute(38, 450); // Oslo to Rome
+			cities[34].addRoute(38, 445.5); // Oslo to Rome
 			routeCounter++;
-			cities[38].addRoute(34, 450); // Rome to Oslo
+			cities[38].addRoute(34, 445.5); // Rome to Oslo
 			routeCounter++;
 		}
 		if ((34 < maxCities) && (45 < maxCities)) {
-			cities[34].addRoute(45, 900); // Oslo to Tokyo
+			cities[34].addRoute(45, 891); // Oslo to Tokyo
 			routeCounter++;
-			cities[45].addRoute(34, 900); // Tokyo to Oslo
+			cities[45].addRoute(34, 891); // Tokyo to Oslo
 			routeCounter++;
 		}
 		if ((34 < maxCities) && (49 < maxCities)) {
-			cities[34].addRoute(49, 320); // Oslo to Vienna
+			cities[34].addRoute(49, 316.8); // Oslo to Vienna
 			routeCounter++;
-			cities[49].addRoute(34, 320); // Vienna to Oslo
+			cities[49].addRoute(34, 316.8); // Vienna to Oslo
 			routeCounter++;
 		}
 		if ((34 < maxCities) && (50 < maxCities)) {
@@ -2600,21 +2734,21 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((37 < maxCities) && (47 < maxCities)) {
-			cities[37].addRoute(47, 500); // Quebec to Vancouver
+			cities[37].addRoute(47, 495); // Quebec to Vancouver
 			routeCounter++;
-			cities[47].addRoute(37, 500); // Vancouver to Quebec
+			cities[47].addRoute(37, 495); // Vancouver to Quebec
 			routeCounter++;
 		}
 		if ((38 < maxCities) && (39 < maxCities)) {
-			cities[38].addRoute(39, 990); // Rome to Santiago
+			cities[38].addRoute(39, 980.1); // Rome to Santiago
 			routeCounter++;
-			cities[39].addRoute(38, 990); // Santiago to Rome
+			cities[39].addRoute(38, 980.1); // Santiago to Rome
 			routeCounter++;
 		}
 		if ((38 < maxCities) && (42 < maxCities)) {
-			cities[38].addRoute(42, 1090); // Rome to Singapore
+			cities[38].addRoute(42, 1079.1); // Rome to Singapore
 			routeCounter++;
-			cities[42].addRoute(38, 1090); // Singapore to Rome
+			cities[42].addRoute(38, 1079.1); // Singapore to Rome
 			routeCounter++;
 		}
 		if ((38 < maxCities) && (45 < maxCities)) {
@@ -2624,15 +2758,15 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((38 < maxCities) && (48 < maxCities)) {
-			cities[38].addRoute(48, 150); // Rome to Venice
+			cities[38].addRoute(48, 148.5); // Rome to Venice
 			routeCounter++;
-			cities[48].addRoute(38, 150); // Venice to Rome
+			cities[48].addRoute(38, 148.5); // Venice to Rome
 			routeCounter++;
 		}
 		if ((38 < maxCities) && (49 < maxCities)) {
-			cities[38].addRoute(49, 250); // Rome to Vienna
+			cities[38].addRoute(49, 247.5); // Rome to Vienna
 			routeCounter++;
-			cities[49].addRoute(38, 250); // Vienna to Rome
+			cities[49].addRoute(38, 247.5); // Vienna to Rome
 			routeCounter++;
 		}
 		if ((38 < maxCities) && (50 < maxCities)) {
@@ -2666,9 +2800,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((40 < maxCities) && (47 < maxCities)) {
-			cities[40].addRoute(47, 600); // Seoul to Vancouver
+			cities[40].addRoute(47, 594); // Seoul to Vancouver
 			routeCounter++;
-			cities[47].addRoute(40, 600); // Vancouver to Seoul
+			cities[47].addRoute(40, 594); // Vancouver to Seoul
 			routeCounter++;
 		}
 		if ((41 < maxCities) && (42 < maxCities)) {
@@ -2720,9 +2854,9 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((43 < maxCities) && (45 < maxCities)) {
-			cities[43].addRoute(45, 900); // Sydney to Tokyo
+			cities[43].addRoute(45, 891); // Sydney to Tokyo
 			routeCounter++;
-			cities[45].addRoute(43, 900); // Tokyo to Sydney
+			cities[45].addRoute(43, 891); // Tokyo to Sydney
 			routeCounter++;
 		}
 		if ((44 < maxCities) && (50 < maxCities)) {
@@ -2732,15 +2866,15 @@ public class TraversalProgram {
 			routeCounter++;
 		}
 		if ((45 < maxCities) && (46 < maxCities)) {
-			cities[45].addRoute(46, 450); // Tokyo to Ulan Bataar
+			cities[45].addRoute(46, 445.5); // Tokyo to Ulan Bataar
 			routeCounter++;
-			cities[46].addRoute(45, 450); // Ulan Bataar to Tokyo
+			cities[46].addRoute(45, 445.5); // Ulan Bataar to Tokyo
 			routeCounter++;
 		}
 		if ((45 < maxCities) && (47 < maxCities)) {
-			cities[45].addRoute(47, 850); // Tokyo to Vancouver
+			cities[45].addRoute(47, 841.5); // Tokyo to Vancouver
 			routeCounter++;
-			cities[47].addRoute(45, 850); // Vancouver to Tokyo
+			cities[47].addRoute(45, 841.5); // Vancouver to Tokyo
 			routeCounter++;
 		}
 		if ((45 < maxCities) && (50 < maxCities)) {
